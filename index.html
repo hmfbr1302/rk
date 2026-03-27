@@ -318,7 +318,12 @@ h3.qtitle em{color:var(--v);font-style:italic}
 .q-hint{text-align:center;margin-top:.9rem;font-size:11px;color:var(--txt3);font-weight:300}
 
 /* ── DEPOIMENTOS ─────────────────────────────────────────── */
-.deps-bg{background:var(--cream)}
+.deps-bg{background:var(--cream);position:relative}
+.deps-bg::before{content:'';position:absolute;inset:0;background:url('/img/deps-bg.jpg') center/cover no-repeat;opacity:.4;pointer-events:none}
+.deps-bg .container{position:relative;z-index:1}
+.dep-avatar-wrap{display:flex;align-items:center;gap:14px;margin-bottom:1rem}
+.dep-avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 2px 12px rgba(107,26,42,.2)}
+.dep-stars{color:var(--gold);font-size:12px;letter-spacing:2px}
 .deps-intro{text-align:center;margin-bottom:3rem}
 .deps-intro h2{font-size:clamp(28px,4vw,42px);color:var(--txt);margin-top:12px}
 .deps-intro h2 em{color:var(--v);font-style:italic}
@@ -329,7 +334,7 @@ h3.qtitle em{color:var(--v);font-style:italic}
 .dep-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
 .dep-card:hover::before{transform:scaleY(1)}
 .dep-quote{font-size:32px;color:var(--cream3);font-family:'Cormorant Garamond',serif;line-height:1;margin-bottom:.5rem}
-.dep-stars{color:var(--gold);font-size:13px;letter-spacing:3px;margin-bottom:.9rem}
+.dep-stars{color:var(--gold);font-size:12px;letter-spacing:2px}
 .dep-txt{font-size:13.5px;color:var(--txt2);line-height:1.75;margin-bottom:1.1rem;font-style:italic;font-family:'Cormorant Garamond',serif;font-weight:400}
 .dep-nome{font-size:13px;color:var(--txt);font-weight:500}
 .dep-proc{font-size:11px;color:var(--gold);margin-top:2px;letter-spacing:.5px;font-weight:300}
@@ -441,25 +446,36 @@ footer{background:var(--v3);padding:3rem 0 2rem}
   .stat-label{font-size:9.5px;letter-spacing:1.5px}
 
   /* ── SOBRE ── */
-  .sobre-grid{gap:2rem}
-  .sobre-img-outer{aspect-ratio:3/2}
+  .sobre-grid{gap:0}
+  /* Foto da Rebeca: proporção retrato para mostrar rosto completo */
+  .sobre-img-outer{aspect-ratio:3/4;border-radius:0}
+  .sobre-img{object-position:center 8%}
   .sobre-deco{display:none}
-  .sobre-credential{position:static;margin-top:-.5rem;border-radius:0 0 var(--r) var(--r)}
+  /* Credencial embaixo da foto, fora dela */
+  .sobre-credential{position:static;border-radius:0 0 var(--r) var(--r);margin-bottom:2rem}
+  .sobre-content{padding-top:.5rem}
   .sobre-content h2{font-size:clamp(26px,7vw,34px)}
   .sobre-body{font-size:14px}
   .cred-list li{font-size:13px}
 
   /* ── PROCEDIMENTOS ── */
   .procs-intro{margin-bottom:2rem}
+  /* Layout em linha no mobile: imagem à esquerda, texto à direita */
   .procs-grid{grid-template-columns:1fr;gap:1rem}
-  .proc-img-wrap{aspect-ratio:16/7}
-  .proc-body{padding:1.1rem 1rem}
-  .proc-name{font-size:18px}
-  /* Em mobile, mostrar hover state sempre visível sem precisar de hover */
-  .proc-card:active::before{opacity:1}
-  .proc-card:active .proc-name{color:#fff}
-  .proc-card:active .proc-desc{color:rgba(255,255,255,.7)}
-  .proc-card:active .proc-cta{color:#fff}
+  .proc-card{display:grid;grid-template-columns:120px 1fr;align-items:stretch}
+  .proc-img-wrap{aspect-ratio:auto;height:100%;min-height:120px}
+  .proc-img-wrap img{height:100%;object-fit:cover}
+  /* object-position por procedimento no mobile */
+  .proc-card:nth-child(1) .proc-img{object-position:center 30%} /* lipo: paquímetro */
+  .proc-card:nth-child(2) .proc-img{object-position:center 40%} /* mama: coração */
+  .proc-card:nth-child(3) .proc-img{object-position:40% 28%}   /* rino: mapeamento */
+  .proc-card:nth-child(4) .proc-img{object-position:center 42%} /* abdômen: cirurgião */
+  .proc-body{padding:.9rem}
+  .proc-icon{width:28px;height:28px;font-size:14px;margin-bottom:.5rem}
+  .proc-name{font-size:16px;margin-bottom:.3rem}
+  .proc-desc{font-size:11.5px;margin-bottom:.6rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  /* Desabilitar overlay de hover nos cards lado a lado */
+  .proc-card::before{display:none}
 
   /* ── QUIZ ── */
   .quiz-intro{margin-bottom:1.75rem}
@@ -810,22 +826,31 @@ footer{background:var(--v3);padding:3rem 0 2rem}
     </div>
     <div class="deps-grid">
       <div class="dep-card reveal">
+        <div class="dep-avatar-wrap">
+          <img src="/img/avatar-dep1.jpg" alt="MS" class="dep-avatar">
+          <div class="dep-stars">★★★★★</div>
+        </div>
         <div class="dep-quote">"</div>
-        <div class="dep-stars">★★★★★</div>
         <p class="dep-txt">A Dra. Rebeca foi extremamente cuidadosa em cada detalhe. Ela entendeu exatamente o que eu queria e o resultado ficou muito natural. Me sinto outra pessoa.</p>
         <div class="dep-nome">Mariana S.</div>
         <div class="dep-proc">Lipoaspiração HD</div>
       </div>
       <div class="dep-card reveal reveal-d1">
+        <div class="dep-avatar-wrap">
+          <img src="/img/avatar-dep2.jpg" alt="FK" class="dep-avatar">
+          <div class="dep-stars">★★★★★</div>
+        </div>
         <div class="dep-quote">"</div>
-        <div class="dep-stars">★★★★★</div>
         <p class="dep-txt">Desde a primeira consulta senti muita segurança. A Dra. Rebeca foi honesta sobre o que era possível e a recuperação foi muito tranquila com o acompanhamento dela.</p>
         <div class="dep-nome">Fernanda K.</div>
         <div class="dep-proc">Mamoplastia</div>
       </div>
       <div class="dep-card reveal reveal-d2">
+        <div class="dep-avatar-wrap">
+          <img src="/img/avatar-dep3.jpg" alt="CM" class="dep-avatar">
+          <div class="dep-stars">★★★★★</div>
+        </div>
         <div class="dep-quote">"</div>
-        <div class="dep-stars">★★★★★</div>
         <p class="dep-txt">Depois de dois filhos meu corpo tinha mudado muito. A Dra. Rebeca fez uma abdominoplastia incrível. A cicatriz ficou discreta e o resultado foi além das minhas expectativas.</p>
         <div class="dep-nome">Carla M.</div>
         <div class="dep-proc">Abdominoplastia</div>
@@ -842,12 +867,12 @@ footer{background:var(--v3);padding:3rem 0 2rem}
       <h2>Tire suas dúvidas antes de <em>decidir</em></h2>
     </div>
     <div class="blog-grid">
-      <article class="blog-card reveal"><div class="blog-img-ph">✦</div><div class="blog-body"><div class="blog-cat">Lipoaspiração</div><h3 class="blog-title">Lipo HD em Curitiba: o que é, como funciona e para quem é indicada</h3><p class="blog-excerpt">A lipoaspiração de alta definição vai além da remoção de gordura. Entenda a técnica que esculpe o contorno corporal com precisão cirúrgica.</p><a href="/blog/lipoaspiracao-em-curitiba/" class="blog-leia">Saiba mais</a></div></article>
-      <article class="blog-card reveal reveal-d1"><div class="blog-img-ph">◈</div><div class="blog-body"><div class="blog-cat">Mamoplastia</div><h3 class="blog-title">Silicone redondo ou anatômico: qual é a melhor escolha para o seu corpo?</h3><p class="blog-excerpt">A escolha do implante ideal depende da sua anatomia, do seu estilo de vida e do resultado que você deseja.</p><a href="/blog/silicone-redondo-ou-anatomico/" class="blog-leia">Saiba mais</a></div></article>
-      <article class="blog-card reveal reveal-d2"><div class="blog-img-ph">◇</div><div class="blog-body"><div class="blog-cat">Recuperação</div><h3 class="blog-title">O que esperar após a lipo: primeira semana e primeiro mês explicados</h3><p class="blog-excerpt">Os cuidados após a cirurgia são parte fundamental do resultado. Saiba o que é normal e como acelerar a recuperação com segurança.</p><a href="/blog/recuperacao-da-lipoaspiracao/" class="blog-leia">Saiba mais</a></div></article>
-      <article class="blog-card reveal"><div class="blog-img-ph">❋</div><div class="blog-body"><div class="blog-cat">Abdominoplastia</div><h3 class="blog-title">Abdominoplastia depois da bariátrica: quando é o momento certo?</h3><p class="blog-excerpt">Após uma grande perda de peso, o excesso de pele pode ser tratado cirurgicamente. Entenda as condições ideais.</p><a href="/blog/abdominoplastia-em-curitiba/" class="blog-leia">Saiba mais</a></div></article>
-      <article class="blog-card reveal reveal-d1"><div class="blog-img-ph">○</div><div class="blog-body"><div class="blog-cat">Rinoplastia</div><h3 class="blog-title">Rinoplastia em Curitiba: como obter um resultado natural que respeita suas feições</h3><p class="blog-excerpt">A rinoplastia moderna prioriza harmonia e função. Veja o que avaliar ao escolher uma cirurgiã.</p><a href="/blog/rinoplastia-em-curitiba/" class="blog-leia">Saiba mais</a></div></article>
-      <article class="blog-card reveal reveal-d2"><div class="blog-img-ph">✧</div><div class="blog-body"><div class="blog-cat">Guia prático</div><h3 class="blog-title">Como escolher uma cirurgiã plástica em Curitiba: 7 perguntas que você deve fazer</h3><p class="blog-excerpt">Titulação, portfolio, estrutura hospitalar e tipo de atendimento. Saiba o que avaliar antes de agendar.</p><a href="/blog/cirurgia-plastica-em-curitiba/" class="blog-leia">Saiba mais</a></div></article>
+      <article class="blog-card reveal"><img class="blog-img-ph" src="/img/blog/b-lipo-destaque.jpg" alt="Lipo HD Curitiba" style="object-fit:cover;font-size:0"><div class="blog-body"><div class="blog-cat">Lipoaspiração</div><h3 class="blog-title">Lipo HD em Curitiba: o que é, como funciona e para quem é indicada</h3><p class="blog-excerpt">A lipoaspiração de alta definição vai além da remoção de gordura. Entenda a técnica que esculpe o contorno corporal com precisão cirúrgica.</p><a href="/blog/lipoaspiracao-em-curitiba/" class="blog-leia">Saiba mais</a></div></article>
+      <article class="blog-card reveal reveal-d1"><img class="blog-img-ph" src="/img/blog/b-silicone.jpg" alt="Silicone Curitiba" style="object-fit:cover;font-size:0"><div class="blog-body"><div class="blog-cat">Mamoplastia</div><h3 class="blog-title">Silicone redondo ou anatômico: qual é a melhor escolha para o seu corpo?</h3><p class="blog-excerpt">A escolha do implante ideal depende da sua anatomia, do seu estilo de vida e do resultado que você deseja.</p><a href="/blog/silicone-redondo-ou-anatomico/" class="blog-leia">Saiba mais</a></div></article>
+      <article class="blog-card reveal reveal-d2"><img class="blog-img-ph" src="/img/blog/b-recuperacao.jpg" alt="Recuperação lipo" style="object-fit:cover;font-size:0"><div class="blog-body"><div class="blog-cat">Recuperação</div><h3 class="blog-title">O que esperar após a lipo: primeira semana e primeiro mês explicados</h3><p class="blog-excerpt">Os cuidados após a cirurgia são parte fundamental do resultado. Saiba o que é normal e como acelerar a recuperação com segurança.</p><a href="/blog/recuperacao-da-lipoaspiracao/" class="blog-leia">Saiba mais</a></div></article>
+      <article class="blog-card reveal"><img class="blog-img-ph" src="/img/blog/b-abdominoplastia.jpg" alt="Abdominoplastia" style="object-fit:cover;font-size:0"><div class="blog-body"><div class="blog-cat">Abdominoplastia</div><h3 class="blog-title">Abdominoplastia depois da bariátrica: quando é o momento certo?</h3><p class="blog-excerpt">Após uma grande perda de peso, o excesso de pele pode ser tratado cirurgicamente. Entenda as condições ideais.</p><a href="/blog/abdominoplastia-em-curitiba/" class="blog-leia">Saiba mais</a></div></article>
+      <article class="blog-card reveal reveal-d1"><img class="blog-img-ph" src="/img/blog/b-rinoplastia.jpg" alt="Rinoplastia Curitiba" style="object-fit:cover;font-size:0"><div class="blog-body"><div class="blog-cat">Rinoplastia</div><h3 class="blog-title">Rinoplastia em Curitiba: como obter um resultado natural que respeita suas feições</h3><p class="blog-excerpt">A rinoplastia moderna prioriza harmonia e função. Veja o que avaliar ao escolher uma cirurgiã.</p><a href="/blog/rinoplastia-em-curitiba/" class="blog-leia">Saiba mais</a></div></article>
+      <article class="blog-card reveal reveal-d2"><img class="blog-img-ph" src="/img/blog/b-como-escolher.jpg" alt="Como escolher cirurgiã" style="object-fit:cover;font-size:0"><div class="blog-body"><div class="blog-cat">Guia prático</div><h3 class="blog-title">Como escolher uma cirurgiã plástica em Curitiba: 7 perguntas que você deve fazer</h3><p class="blog-excerpt">Titulação, portfolio, estrutura hospitalar e tipo de atendimento. Saiba o que avaliar antes de agendar.</p><a href="/blog/cirurgia-plastica-em-curitiba/" class="blog-leia">Saiba mais</a></div></article>
     </div>
   </div>
 </section>
