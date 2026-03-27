@@ -295,9 +295,17 @@ h3.qtitle em{color:var(--v);font-style:italic}
 .ct-list li{font-size:12px;color:var(--txt2);padding:5.5px 0;border-bottom:1px solid var(--cream3);display:flex;gap:8px;line-height:1.5;font-weight:300}
 .ct-list li:last-child{border:none;padding-bottom:0}
 .ct-list li::before{content:'✓';color:var(--gold);font-weight:600;flex-shrink:0;font-size:11px}
-.ct-price{text-align:center;margin-top:12px;padding-top:12px;border-top:1px solid var(--cream3)}
-.ct-pval{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--v);font-weight:400}
-.ct-pnote{font-size:11px;color:var(--txt3);margin-top:3px;font-weight:300}
+.ct-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1.1rem 0 .75rem}
+.ct-opt{border-radius:var(--r-sm);padding:1rem;position:relative;overflow:hidden}
+.ct-opt-online{background:var(--cream2);border:1.5px solid var(--cream3)}
+.ct-opt-presencial{background:linear-gradient(135deg,var(--v4),#fff);border:1.5px solid rgba(107,26,42,.2)}
+.ct-opt-badge{font-size:9px;text-transform:uppercase;letter-spacing:1.5px;font-weight:500;color:var(--txt3);margin-bottom:6px;font-family:'DM Sans',sans-serif}
+.ct-opt-badge-pres{color:var(--v)}
+.ct-opt-price{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--v);font-weight:500;line-height:1;margin-bottom:5px}
+.ct-opt-desc{font-size:10.5px;color:var(--txt3);line-height:1.6;font-weight:300}
+.ct-opt-presencial .ct-opt-price{color:var(--v)}
+.ct-valor{background:var(--v4);border-radius:var(--r-xs);padding:.85rem 1rem;font-size:12px;color:var(--v);line-height:1.65;font-weight:400;border-left:3px solid var(--v)}
+@media(max-width:400px){.ct-options{grid-template-columns:1fr}}
 .urgency{background:var(--v4);border:1.5px solid rgba(107,26,42,.15);border-radius:var(--r-sm);padding:.95rem 1.1rem;margin-bottom:.85rem;display:flex;align-items:center;gap:10px}
 .urg-dot{width:8px;height:8px;border-radius:50%;background:var(--v);flex-shrink:0;animation:pulse 1.8s ease-in-out infinite;box-shadow:0 0 0 0 rgba(107,26,42,.4)}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(107,26,42,.4)}50%{box-shadow:0 0 0 6px rgba(107,26,42,0)}}
@@ -1223,7 +1231,7 @@ function buildResult(){
   var isSensivel=ans[2]==='preco';
   var WA='5541984001601';
   var msgP=encodeURIComponent('Olá! Sou '+uData.nome+' e acabei de fazer a avaliação no site. Meu diagnóstico foi "'+prof.nome+'" e meu interesse é em '+proc.nome.replace(/&nbsp;/g,' ')+'. Gostaria de agendar uma avaliação com a Dra. Rebeca.');
-  var msgO=encodeURIComponent('Olá! Sou '+uData.nome+'. Fiz a avaliação no site e gostaria de agendar uma consulta online por R$ 100.');
+  var msgO=encodeURIComponent('Olá! Sou '+uData.nome+'. Fiz a avaliação no site e gostaria de agendar uma consulta online com a Dra. Rebeca.');
   var msgPreco=encodeURIComponent('Olá! Sou '+uData.nome+'. Fiz a avaliação no site e queria entender melhor as opções de pagamento para '+proc.nome.replace(/&nbsp;/g,' ')+'. Pode me ajudar?');
   var mes=new Date().toLocaleString('pt-BR',{month:'long'});
 
@@ -1276,23 +1284,32 @@ function buildResult(){
     '<div class="consult">'+
       '<div class="ct-hd"><div class="ct-gem">✦</div>'+
       '<div><div class="ct-title">Avaliação Cirúrgica com a Dra. Rebeca</div>'+
-      '<div class="ct-sub">60 minutos · Curitiba ou Online</div></div></div>'+
+      '<div class="ct-sub">60 minutos · atendimento exclusivo e personalizado</div></div></div>'+
       '<ul class="ct-list">'+
-        '<li>Exame clínico completo e análise do seu caso</li>'+
-        '<li>Técnica cirúrgica mais adequada ao seu corpo</li>'+
-        '<li>Planejamento com etapas, cronograma e recuperação</li>'+
-        '<li>Estimativa de investimento real e personalizada</li>'+
-        (isSensivel?'<li>Todas as opções de parcelamento disponíveis</li>':'<li>Resposta a todas as suas dúvidas</li>')+
-        '<li>Relatório escrito com plano completo para levar</li>'+
+        '<li>Exame clínico completo — análise do seu caso com olhar especializado</li>'+
+        '<li>Técnica cirúrgica ideal para o seu corpo, não uma resposta genérica</li>'+
+        '<li>Plano cirúrgico completo: etapas, cronograma e recuperação</li>'+
+        '<li>Estimativa de investimento real e personalizada para o seu caso</li>'+
+        (isSensivel?'<li>Todas as opções de parcelamento apresentadas com clareza</li>':'<li>Todas as suas dúvidas respondidas sem pressa')+
+        '<li>Relatório escrito para levar para casa e decidir com calma</li>'+
       '</ul>'+
-      '<div class="ct-price">'+
-        '<div class="ct-pval">R$&nbsp;100 <span style="font-size:13px;font-weight:300;color:#9A8080;font-family:DM Sans,sans-serif">· consulta online</span></div>'+
-        '<div class="ct-pnote">ou presencial em Curitiba · CRM PR 40326</div>'+
+      '<div class="ct-options">'+
+        '<div class="ct-opt ct-opt-online">'+
+          '<div class="ct-opt-badge">Online</div>'+
+          '<div class="ct-opt-price">R$&nbsp;170</div>'+
+          '<div class="ct-opt-desc">Via videochamada · para qualquer cidade · agenda flexível</div>'+
+        '</div>'+
+        '<div class="ct-opt ct-opt-presencial">'+
+          '<div class="ct-opt-badge ct-opt-badge-pres">Presencial ✦</div>'+
+          '<div class="ct-opt-price">Curitiba</div>'+
+          '<div class="ct-opt-desc">Exame físico completo · resultado mais preciso · experiência completa</div>'+
+        '</div>'+
       '</div>'+
+      '<div class="ct-valor">A consulta de R$&nbsp;170 é abatida do valor da cirurgia caso você decida realizar o procedimento com a Dra. Rebeca.</div>'+
     '</div>'+
     '<div class="urgency"><div class="urg-dot"></div><div class="urg-txt">Agenda de '+mes+' com vagas limitadas. A Dra. Rebeca limita o número de avaliações mensais.</div></div>'+
     '<div class="cta-stack">'+ctaP+
-      '<a href="https://wa.me/'+WA+'?text='+msgO+'" target="_blank" rel="noopener" class="btn btn-s" onclick="trackWA(\'online\')">Consulta online · R$&nbsp;100</a>'+
+      '<a href="https://wa.me/'+WA+'?text='+msgO+'" target="_blank" rel="noopener" class="btn btn-s" onclick="trackWA(\'online\')">Consulta online · R$&nbsp;170</a>'+
     '</div>'+
     '<p class="disc">Dra. Rebeca Koteski · CRM PR 40326 · RQE 34726 · @rkoteski.cirurgiaplastica<br>Estimativas baseadas em tabelas de referência de mercado. Investimento real definido em avaliação clínica.</p>';
 
