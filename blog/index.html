@@ -1,305 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Blog | Dra. Rebeca Koteski · Cirurgia Plástica em Curitiba</title>
-<meta name="description" content="Artigos sobre cirurgia plástica em Curitiba: lipoaspiração, mamoplastia, rinoplastia, abdominoplastia e muito mais. Dra. Rebeca Koteski, CRM PR 40326.">
+<html lang="pt-BR"><head><meta charset="UTF-8">
+<title>Blog | Dra. Rebeca Koteski · Cirurgia Plástica Curitiba</title>
+<meta name="description" content="Artigos sobre cirurgia plástica em Curitiba: lipoaspiração, mamoplastia, rinoplastia, abdominoplastia e mais. Dra. Rebeca Koteski, CRM PR 40326.">
 <link rel="canonical" href="https://koteski.com.br/blog/">
-<meta property="og:title" content="Blog | Dra. Rebeca Koteski · Cirurgia Plástica">
-<meta property="og:description" content="Tire suas dúvidas sobre cirurgia plástica. Artigos educativos da Dra. Rebeca Koteski.">
-<meta property="og:image" content="https://koteski.com.br/img/og-image.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:#FEFCFB;color:#1A1010}
-
-/* NAV */
-nav{background:#4A0F1C;padding:1rem 0;position:sticky;top:0;z-index:100}
-.nav-inner{max-width:1080px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-mark{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(201,169,110,.35);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;letter-spacing:1px;flex-shrink:0}
-.logo-name{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,.85)}
-.logo-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);display:block}
-.nav-cta{background:#A0834A;color:#fff;padding:9px 18px;border-radius:50px;font-size:13px;font-weight:500;text-decoration:none;white-space:nowrap}
-
-/* HERO */
-.hero{background:linear-gradient(135deg,#4A0F1C,#6B1A2A);padding:4rem 0 3rem;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;border:1px solid rgba(201,169,110,.08);pointer-events:none}
-.hero-inner{max-width:1080px;margin:0 auto;padding:0 1.5rem}
-.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(201,169,110,.6);font-family:'DM Sans',sans-serif;margin-bottom:12px}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);color:#fff;font-weight:300;line-height:1.15;margin-bottom:.85rem}
-.hero h1 em{color:#C9A96E;font-style:italic}
-.hero p{font-size:15px;color:rgba(255,255,255,.55);max-width:480px;line-height:1.75;font-weight:300}
-
-/* FILTROS */
-.filters{background:#F8F2F0;border-bottom:1px solid #E0D0CC;padding:1rem 0;position:sticky;top:64px;z-index:90;overflow-x:auto}
-.filters-inner{max-width:1080px;margin:0 auto;padding:0 1.5rem;display:flex;gap:8px;white-space:nowrap}
-.filter-btn{border:1.5px solid #E0D0CC;background:#fff;color:#5A4040;padding:7px 16px;border-radius:50px;font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;flex-shrink:0}
-.filter-btn:hover,.filter-btn.active{background:#6B1A2A;border-color:#6B1A2A;color:#fff}
-
-/* GRID */
-.container{max-width:1080px;margin:0 auto;padding:0 1.5rem}
-.section{padding:3rem 0}
-.grid{display:grid;gap:1.25rem;grid-template-columns:1fr}
-@media(min-width:560px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
-
-/* CARDS */
-.card{background:#fff;border:1px solid #E0D0CC;border-radius:14px;overflow:hidden;transition:transform .3s,box-shadow .3s;text-decoration:none;display:block}
-.card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(107,26,42,.1)}
-.card-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#F0E8E4;display:flex;align-items:center;justify-content:center;font-size:32px}
-.card-body{padding:1.2rem}
-.card-cat{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#A0834A;font-weight:500;margin-bottom:7px}
-.card-title{font-family:'Cormorant Garamond',serif;font-size:18px;color:#1A1010;line-height:1.3;margin-bottom:.6rem;font-weight:500}
-.card-excerpt{font-size:12.5px;color:#5A4040;line-height:1.7;margin-bottom:.9rem;font-weight:300;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.card-leia{font-size:12px;color:#6B1A2A;font-weight:500;display:inline-flex;align-items:center;gap:5px}
-.card-leia::after{content:'→'}
-
-/* SEÇÕES ESPECIAIS */
-.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,32px);color:#1A1010;margin-bottom:1.75rem;font-weight:400}
-.section-title em{color:#6B1A2A;font-style:italic}
-
-/* CTA BANNER */
-.cta-banner{background:linear-gradient(135deg,#4A0F1C,#6B1A2A);border-radius:20px;padding:2.5rem 2rem;text-align:center;margin:3rem 0}
-.cta-banner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,4vw,34px);color:#fff;margin-bottom:.75rem;font-weight:400}
-.cta-banner h2 em{color:#C9A96E;font-style:italic}
-.cta-banner p{font-size:14px;color:rgba(255,255,255,.55);margin-bottom:1.75rem;font-weight:300}
-.cta-btn{background:#A0834A;color:#fff;padding:14px 32px;border-radius:50px;font-size:15px;font-weight:500;text-decoration:none;display:inline-block;transition:background .2s}
-.cta-btn:hover{background:#C9A96E}
-
-/* DESTAQUE (card grande) */
-.destaque{background:#fff;border:1px solid #E0D0CC;border-radius:14px;overflow:hidden;display:grid;text-decoration:none;transition:transform .3s,box-shadow .3s;margin-bottom:1.25rem}
-@media(min-width:640px){.destaque{grid-template-columns:1fr 1fr}}
-.destaque:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(107,26,42,.1)}
-.destaque-img{aspect-ratio:16/9;object-fit:cover;background:#F0E8E4;display:flex;align-items:center;justify-content:center;font-size:48px;min-height:200px}
-@media(min-width:640px){.destaque-img{aspect-ratio:auto;height:100%}}
-.destaque-body{padding:1.75rem}
-.destaque-body .card-cat{font-size:10px;margin-bottom:10px}
-.destaque-body .card-title{font-size:clamp(20px,3vw,26px);margin-bottom:.85rem}
-.destaque-body .card-excerpt{-webkit-line-clamp:3;margin-bottom:1.25rem}
-
-/* FOOTER */
-footer{background:#4A0F1C;padding:2rem 0;margin-top:3rem}
-footer p{font-size:11px;color:rgba(255,255,255,.25);text-align:center;font-weight:300}
-footer a{color:rgba(201,169,110,.5);text-decoration:none}
-
-/* HIDDEN */
-.card[data-cat]{transition:opacity .3s,transform .3s}
-.card.hidden{display:none}
-.destaque.hidden{display:none}
-
-@media(max-width:640px){
-  .filters{top:58px}
-  .destaque{grid-template-columns:1fr}
-  .cta-banner{padding:2rem 1.25rem}
-}
-</style>
-</head>
-<body>
-
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo">
-      <div class="logo-mark">RK</div>
-      <div>
-        <div class="logo-name">Dra. Rebeca Koteski</div>
-        <span class="logo-tag">Cirurgia Plástica · CRM PR 40326</span>
-      </div>
-    </a>
-    <a href="/#avaliacao" class="nav-cta">Avaliação gratuita</a>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">Conteúdo educativo</div>
-    <h1>Tire suas dúvidas antes<br>de <em>decidir</em></h1>
-    <p>Artigos sobre cirurgia plástica escritos com transparência e rigor técnico pela Dra. Rebeca Koteski.</p>
-  </div>
-</section>
-
-<div class="filters">
-  <div class="filters-inner">
-    <button class="filter-btn active" onclick="filtrar('todos')">Todos</button>
-    <button class="filter-btn" onclick="filtrar('lipoaspiracao')">Lipoaspiração</button>
-    <button class="filter-btn" onclick="filtrar('mamoplastia')">Mamoplastia</button>
-    <button class="filter-btn" onclick="filtrar('rinoplastia')">Rinoplastia</button>
-    <button class="filter-btn" onclick="filtrar('abdominoplastia')">Abdominoplastia</button>
-    <button class="filter-btn" onclick="filtrar('comparacao')">Comparações</button>
-    <button class="filter-btn" onclick="filtrar('curitiba')">Curitiba</button>
-    <button class="filter-btn" onclick="filtrar('recuperacao')">Recuperação</button>
-  </div>
-</div>
-
-<div class="container">
-  <section class="section">
-
-    <!-- DESTAQUE -->
-    <a href="/blog/lipoaspiracao-em-curitiba/" class="destaque" data-cat="lipoaspiracao curitiba">
-      <img class="destaque-img" src="/img/blog/b-lipo-destaque.jpg" alt="Lipo HD em Curitiba" style="object-fit:cover;width:100%;height:100%;min-height:220px">
-      <div class="destaque-body">
-        <div class="card-cat">Lipoaspiração · Destaque</div>
-        <div class="card-title">Lipo HD em Curitiba: o que é, como funciona e para quem é indicada</div>
-        <div class="card-excerpt">A lipoaspiração de alta definição vai além da remoção de gordura. Entenda a técnica que esculpe o contorno corporal com precisão cirúrgica e saiba se você é candidata.</div>
-        <span class="card-leia">Ler artigo completo</span>
-      </div>
-    </a>
-
-    <!-- GRID PRINCIPAL -->
-    <div class="grid">
-
-      <a href="/blog/silicone-redondo-ou-anatomico/" class="card" data-cat="mamoplastia comparacao">
-        <img class="card-img" src="/img/blog/b-silicone.jpg" alt="Silicone" style="object-fit:cover;width:100%;aspect-ratio:16/9">
-        <div class="card-body">
-          <div class="card-cat">Mamoplastia</div>
-          <div class="card-title">Silicone redondo ou anatômico: qual é a melhor escolha?</div>
-          <div class="card-excerpt">Entenda as diferenças e descubra qual implante é mais indicado para o seu caso.</div>
-          <span class="card-leia">Saiba mais</span>
-        </div>
-      </a>
-
-      <a href="/blog/quanto-custa-lipoaspiracao/" class="card" data-cat="lipoaspiracao">
-        <img class="card-img" src="/img/blog/b-custo.jpg" alt="Quanto custa" style="object-fit:cover;width:100%;aspect-ratio:16/9">
-        <div class="card-body">
-          <div class="card-cat">Lipoaspiração</div>
-          <div class="card-title">Quanto custa a lipoaspiração em Curitiba?</div>
-          <div class="card-excerpt">Valores de referência, fatores que influenciam o preço e opções de parcelamento.</div>
-          <span class="card-leia">Saiba mais</span>
-        </div>
-      </a>
-
-      <a href="/blog/recuperacao-da-lipoaspiracao/" class="card" data-cat="lipoaspiracao recuperacao">
-        <img class="card-img" src="/img/blog/b-recuperacao.jpg" alt="Recuperação" style="object-fit:cover;width:100%;aspect-ratio:16/9">
-        <div class="card-body">
-          <div class="card-cat">Recuperação</div>
-          <div class="card-title">O que esperar após a lipo: primeira semana e primeiro mês</div>
-          <div class="card-excerpt">Guia completo do pós-operatório para acelerar a recuperação com segurança.</div>
-          <span class="card-leia">Saiba mais</span>
-        </div>
-      </a>
-
-      <a href="/blog/abdominoplastia-em-curitiba/" class="card" data-cat="abdominoplastia curitiba">
-        <img class="card-img" src="/img/blog/b-abdominoplastia.jpg" alt="Abdominoplastia" style="object-fit:cover;width:100%;aspect-ratio:16/9">
-        <div class="card-body">
-          <div class="card-cat">Abdominoplastia</div>
-          <div class="card-title">Abdominoplastia em Curitiba: tudo que você precisa saber</div>
-          <div class="card-excerpt">Da indicação ao resultado: guia completo para quem considera fazer abdominoplastia.</div>
-          <span class="card-leia">Saiba mais</span>
-        </div>
-      </a>
-
-      <a href="/blog/rinoplastia-em-curitiba/" class="card" data-cat="rinoplastia curitiba">
-        <img class="card-img" src="/img/blog/b-rinoplastia.jpg" alt="Rinoplastia" style="object-fit:cover;width:100%;aspect-ratio:16/9">
-        <div class="card-body">
-          <div class="card-cat">Rinoplastia</div>
-          <div class="card-title">Rinoplastia em Curitiba: resultado natural que respeita suas feições</div>
-          <div class="card-excerpt">A rinoplastia moderna prioriza harmonia facial. Saiba o que avaliar ao escolher uma cirurgiã.</div>
-          <span class="card-leia">Saiba mais</span>
-        </div>
-      </a>
-
-      <a href="/blog/lipo-ou-dieta/" class="card" data-cat="lipoaspiracao comparacao">
-        <img class="card-img" src="/img/blog/b-lipo-dieta.jpg" alt="Lipo ou dieta" style="object-fit:cover;width:100%;aspect-ratio:16/9">
-        <div class="card-body">
-          <div class="card-cat">Comparação</div>
-          <div class="card-title">Lipo ou dieta: qual a diferença?</div>
-          <div class="card-excerpt">Entenda quando a cirurgia é indicada e como ela se complementa com hábitos saudáveis.</div>
-          <span class="card-leia">Saiba mais</span>
-        </div>
-      </a>
-
-      <a href="/blog/mamoplastia-em-curitiba/" class="card" data-cat="mamoplastia curitiba">
-        <img class="card-img" src="/img/blog/b-mamoplastia.jpg" alt="Mamoplastia" style="object-fit:cover;width:100%;aspect-ratio:16/9">
-        <div class="card-body">
-          <div class="card-cat">Mamoplastia</div>
-          <div class="card-title">Mamoplastia em Curitiba: aumento, redução e levantamento</div>
-          <div class="card-excerpt">Conheça as técnicas e saiba qual procedimento é indicado para o seu caso.</div>
-          <span class="card-leia">Saiba mais</span>
-        </div>
-      </a>
-
-      <a href="/blog/lipoaspiracao-no-batel/" class="card" data-cat="lipoaspiracao curitiba">
-        <img class="card-img" src="/img/blog/b-lipo-destaque.jpg" alt="Lipoaspiração em Curitiba" style="object-fit:cover;width:100%;aspect-ratio:16/9">
-        <div class="card-body">
-          <div class="card-cat">Lipoaspiração · Curitiba</div>
-          <div class="card-title">Lipoaspiração no Batel e Água Verde, Curitiba</div>
-          <div class="card-excerpt">Encontre uma cirurgiã plástica especializada na sua região em Curitiba.</div>
-          <span class="card-leia">Saiba mais</span>
-        </div>
-      </a>
-
-      <a href="/blog/cirurgia-plastica-em-curitiba/" class="card" data-cat="curitiba">
-        <img class="card-img" src="/img/blog/b-como-escolher.jpg" alt="Como escolher" style="object-fit:cover;width:100%;aspect-ratio:16/9">
-        <div class="card-body">
-          <div class="card-cat">Guia prático</div>
-          <div class="card-title">Como escolher uma cirurgiã plástica em Curitiba</div>
-          <div class="card-excerpt">7 perguntas essenciais para fazer antes de escolher sua especialista.</div>
-          <span class="card-leia">Saiba mais</span>
-        </div>
-      </a>
-
-      <a href="/blog/abdominoplastia-pos-bariatrica-ou-lipo/" class="card" data-cat="abdominoplastia comparacao">
-        <img class="card-img" src="/img/blog/b-bariatrica.jpg" alt="Bariátrica" style="object-fit:cover;width:100%;aspect-ratio:16/9">
-        <div class="card-body">
-          <div class="card-cat">Comparação</div>
-          <div class="card-title">Lipo ou abdominoplastia após a bariátrica?</div>
-          <div class="card-excerpt">Saiba qual procedimento é mais indicado após grande perda de peso.</div>
-          <span class="card-leia">Saiba mais</span>
-        </div>
-      </a>
-
-      <a href="/blog/recuperacao-da-mamoplastia/" class="card" data-cat="mamoplastia recuperacao">
-        <img class="card-img" src="/img/blog/b-recuperacao-mama.jpg" alt="Recuperação mama" style="object-fit:cover;width:100%;aspect-ratio:16/9">
-        <div class="card-body">
-          <div class="card-cat">Recuperação</div>
-          <div class="card-title">Recuperação da mamoplastia: o que esperar</div>
-          <div class="card-excerpt">Cuidados essenciais no pós-operatório para garantir o melhor resultado.</div>
-          <span class="card-leia">Saiba mais</span>
-        </div>
-      </a>
-
-      <a href="/blog/rinoplastia-cirurgica-ou-nao-cirurgica/" class="card" data-cat="rinoplastia comparacao">
-        <img class="card-img" src="/img/blog/b-rino-comparacao.jpg" alt="Rinoplastia comparação" style="object-fit:cover;width:100%;aspect-ratio:16/9">
-        <div class="card-body">
-          <div class="card-cat">Comparação</div>
-          <div class="card-title">Rinoplastia cirúrgica ou não cirúrgica: qual escolher?</div>
-          <div class="card-excerpt">Entenda as diferenças, indicações e resultados de cada técnica.</div>
-          <span class="card-leia">Saiba mais</span>
-        </div>
-      </a>
-
-    </div>
-
-    <div class="cta-banner">
-      <h2>Ainda tem dúvidas? A Dra. Rebeca<br><em>responde</em> pessoalmente</h2>
-      <p>Faça a avaliação gratuita e descubra qual procedimento é ideal para o seu perfil</p>
-      <a href="/#avaliacao" class="cta-btn">Iniciar avaliação gratuita →</a>
-    </div>
-
-  </section>
-</div>
-
-<footer>
-  <p>© 2025 Dra. Rebeca Koteski · Cirurgia Plástica · CRM PR 40326 · RQE 34726 ·
-  <a href="/">koteski.com.br</a> ·
-  <a href="https://wa.me/5541984001601">WhatsApp</a></p>
-</footer>
-
-<script>
-function filtrar(cat){
-  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});
-  event.target.classList.add('active');
-  document.querySelectorAll('.card[data-cat],.destaque[data-cat]').forEach(function(c){
-    if(cat==='todos'||c.dataset.cat.includes(cat)){
-      c.classList.remove('hidden');
-    } else {
-      c.classList.add('hidden');
-    }
-  });
-}
-</script>
-</body>
-</html>
+<style>body{font-family:sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem}h1{color:#4A0F1C}ul{columns:2;column-gap:2rem}li{padding:.25rem 0}a{color:#6B1A2A}</style>
+</head><body>
+<h1>Blog — Dra. Rebeca Koteski</h1>
+<p>Artigos educativos sobre cirurgia plástica em Curitiba e Paraná.</p>
+<ul><li><a href="https://koteski.com.br/blog/lipoaspiracao-em-curitiba/">Lipoaspiracao Em Curitiba</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-londrina/">Lipoaspiracao Em Londrina</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-maringa/">Lipoaspiracao Em Maringa</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-cascavel/">Lipoaspiracao Em Cascavel</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-ponta-grossa/">Lipoaspiracao Em Ponta Grossa</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-foz-do-iguacu/">Lipoaspiracao Em Foz Do Iguacu</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-guarapuava/">Lipoaspiracao Em Guarapuava</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-sao-jose-dos-pinhais/">Lipoaspiracao Em Sao Jose Dos Pinhais</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-araucaria/">Lipoaspiracao Em Araucaria</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-colombo/">Lipoaspiracao Em Colombo</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-paranagua/">Lipoaspiracao Em Paranagua</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-apucarana/">Lipoaspiracao Em Apucarana</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-campo-largo/">Lipoaspiracao Em Campo Largo</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-toledo/">Lipoaspiracao Em Toledo</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-umuarama/">Lipoaspiracao Em Umuarama</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-francisco-beltrao/">Lipoaspiracao Em Francisco Beltrao</a></li>
+<li><a href="https://koteski.com.br/blog/lipoaspiracao-em-pinhais/">Lipoaspiracao Em Pinhais</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-curitiba/">Mamoplastia Em Curitiba</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-londrina/">Mamoplastia Em Londrina</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-maringa/">Mamoplastia Em Maringa</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-cascavel/">Mamoplastia Em Cascavel</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-ponta-grossa/">Mamoplastia Em Ponta Grossa</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-foz-do-iguacu/">Mamoplastia Em Foz Do Iguacu</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-guarapuava/">Mamoplastia Em Guarapuava</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-sao-jose-dos-pinhais/">Mamoplastia Em Sao Jose Dos Pinhais</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-araucaria/">Mamoplastia Em Araucaria</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-colombo/">Mamoplastia Em Colombo</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-paranagua/">Mamoplastia Em Paranagua</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-apucarana/">Mamoplastia Em Apucarana</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-campo-largo/">Mamoplastia Em Campo Largo</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-toledo/">Mamoplastia Em Toledo</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-umuarama/">Mamoplastia Em Umuarama</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-francisco-beltrao/">Mamoplastia Em Francisco Beltrao</a></li>
+<li><a href="https://koteski.com.br/blog/mamoplastia-em-pinhais/">Mamoplastia Em Pinhais</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-curitiba/">Rinoplastia Em Curitiba</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-londrina/">Rinoplastia Em Londrina</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-maringa/">Rinoplastia Em Maringa</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-cascavel/">Rinoplastia Em Cascavel</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-ponta-grossa/">Rinoplastia Em Ponta Grossa</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-foz-do-iguacu/">Rinoplastia Em Foz Do Iguacu</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-guarapuava/">Rinoplastia Em Guarapuava</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-sao-jose-dos-pinhais/">Rinoplastia Em Sao Jose Dos Pinhais</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-araucaria/">Rinoplastia Em Araucaria</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-colombo/">Rinoplastia Em Colombo</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-paranagua/">Rinoplastia Em Paranagua</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-apucarana/">Rinoplastia Em Apucarana</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-campo-largo/">Rinoplastia Em Campo Largo</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-toledo/">Rinoplastia Em Toledo</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-umuarama/">Rinoplastia Em Umuarama</a></li>
+<li><a href="https://koteski.com.br/blog/rinoplastia-em-francisco-beltrao/">Rinoplastia Em Francisco Beltrao</a></li></ul>
+</body></html>
