@@ -93,6 +93,26 @@ h1,h2,h3,.h-serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400
 .section{padding:5rem 0}
 @media(min-width:768px){.section{padding:7rem 0}}
 
+/* ── INSTAGRAM INTEGRATIONS ────────────────────────────── */
+.hero-badge-insta{display:flex;align-items:center;gap:7px;text-decoration:none;border:1px solid rgba(201,169,110,.35);border-radius:50px;padding:5px 12px 5px 8px;transition:all .25s var(--ease)}
+.hero-badge-insta svg{color:var(--gold2);flex-shrink:0}
+.hero-badge-insta .hero-badge-text{color:rgba(255,255,255,.65)}
+.hero-badge-insta:hover{border-color:var(--gold);background:rgba(201,169,110,.1)}
+.hero-badge-insta:hover .hero-badge-text{color:var(--gold)}
+.sobre-insta-btn{display:inline-flex;align-items:center;gap:8px;margin-top:1.5rem;color:var(--v);font-size:13px;font-weight:500;letter-spacing:.3px;text-decoration:none;border-bottom:1px solid rgba(107,26,42,.2);padding-bottom:3px;transition:all .25s var(--ease)}
+.sobre-insta-btn:hover{color:var(--v2);border-color:var(--v)}
+.deps-insta-cta{display:flex;align-items:center;justify-content:center;gap:1.25rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--cream3);flex-wrap:wrap}
+.deps-insta-txt{font-size:13px;color:var(--txt3);font-weight:300}
+.deps-insta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--v);color:#fff;padding:9px 18px;border-radius:50px;font-size:12.5px;font-weight:500;text-decoration:none;letter-spacing:.3px;transition:all .3s var(--ease)}
+.deps-insta-btn:hover{background:var(--v2);transform:translateY(-2px);box-shadow:0 6px 18px rgba(107,26,42,.25)}
+.cta-social{margin-top:1.75rem;display:flex;align-items:center;justify-content:center;gap:.85rem;flex-wrap:wrap}
+.cta-social-txt{font-size:12px;color:rgba(255,255,255,.35);letter-spacing:.3px}
+.cta-social-link{display:inline-flex;align-items:center;gap:7px;color:rgba(201,169,110,.6);font-size:12.5px;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(201,169,110,.25);padding-bottom:2px;transition:all .25s var(--ease)}
+.cta-social-link:hover{color:var(--gold);border-color:var(--gold)}
+.footer-insta{display:flex;align-items:center;gap:7px}
+.footer-insta svg{color:var(--gold2);flex-shrink:0;opacity:.7}
+.footer-insta:hover svg{opacity:1}
+
 /* ── SCROLL REVEAL ──────────────────────────────────────── */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .reveal.revealed{opacity:1;transform:none}
@@ -625,10 +645,10 @@ footer{background:var(--v3);padding:3rem 0 2rem}
           <div class="hero-badge-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
           <span class="hero-badge-text">Curitiba e região</span>
         </div>
-        <div class="hero-badge">
-          <div class="hero-badge-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <span class="hero-badge-text">Consulta online disponível</span>
-        </div>
+        <a href="https://instagram.com/rkoteski.cirurgiaplastica" target="_blank" rel="noopener" class="hero-badge hero-badge-insta">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <span class="hero-badge-text">@rkoteski.cirurgiaplastica</span>
+        </a>
       </div>
     </div>
   </div>
@@ -695,6 +715,11 @@ footer{background:var(--v3);padding:3rem 0 2rem}
           <li><div class="cred-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Atendimento em Curitiba com opção de consulta online</li>
           <li><div class="cred-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Acompanhamento personalizado durante toda a recuperação</li>
         </ul>
+        <a href="https://instagram.com/rkoteski.cirurgiaplastica" target="_blank" rel="noopener" class="sobre-insta-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Ver conteúdo no Instagram
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </div>
@@ -892,10 +917,15 @@ footer{background:var(--v3);padding:3rem 0 2rem}
         <div class="dep-proc">Abdominoplastia</div>
       </div>
     </div>
+    <div class="deps-insta-cta reveal">
+      <p class="deps-insta-txt">Acompanhe resultados reais e bastidores do consultório</p>
+      <a href="https://instagram.com/rkoteski.cirurgiaplastica" target="_blank" rel="noopener" class="deps-insta-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @rkoteski.cirurgiaplastica
+      </a>
+    </div>
   </div>
 </section>
-
-<!-- BLOG -->
 <section class="section blog-bg">
   <div class="container">
     <div class="blog-intro reveal">
@@ -923,6 +953,13 @@ footer{background:var(--v3);padding:3rem 0 2rem}
       Iniciar avaliação gratuita
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
+    <div class="cta-social reveal reveal-d4">
+      <span class="cta-social-txt">Ou conheça o trabalho da Dra. Rebeca</span>
+      <a href="https://instagram.com/rkoteski.cirurgiaplastica" target="_blank" rel="noopener" class="cta-social-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Ver no Instagram
+      </a>
+    </div>
   </div>
 </section>
 
@@ -951,7 +988,10 @@ footer{background:var(--v3);padding:3rem 0 2rem}
       <div>
         <div class="footer-heading">Contato</div>
         <a href="https://wa.me/5541984001601" target="_blank" class="footer-link">WhatsApp</a>
-        <a href="https://instagram.com/rkoteski.cirurgiaplastica" target="_blank" class="footer-link">Instagram</a>
+        <a href="https://instagram.com/rkoteski.cirurgiaplastica" target="_blank" rel="noopener" class="footer-link footer-insta">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram · @rkoteski.cirurgiaplastica
+        </a>
         <a href="#avaliacao" class="footer-link">Avaliação gratuita</a>
         <a href="/blog/" class="footer-link">Blog</a>
       </div>
