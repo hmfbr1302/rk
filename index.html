@@ -681,7 +681,7 @@ footer{background:var(--v3);padding:3rem 0 2rem}
         <div class="stat-gold-line"></div>
       </div>
       <div class="stat-item reveal reveal-d1">
-        <div class="stat-number"><span>8</span><sup>&nbsp;anos</sup></div>
+        <div class="stat-number"><span id="statAnos">9</span><sup>&nbsp;anos</sup></div>
         <div class="stat-label">De experiência</div>
         <div class="stat-gold-line"></div>
       </div>
@@ -1128,7 +1128,7 @@ window.addEventListener('scroll',function(){
 (function(){
   var STATS=[
     {el:null,target:208,suffix:'',decimal:false,prefix:'+'},
-    {el:null,target:8,suffix:' anos',decimal:false,prefix:''},
+    {el:null,target:(new Date().getFullYear()-2017),suffix:' anos',decimal:false,prefix:''},
     {el:null,target:98,suffix:'%',decimal:false,prefix:''},
     {el:null,target:4.9,suffix:'★',decimal:true,prefix:''}
   ];
