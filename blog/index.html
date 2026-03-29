@@ -7,7 +7,7 @@
 <meta name="description" content="Artigos sobre cirurgia plástica em Curitiba. Tire suas dúvidas antes de decidir. Dra. Rebeca Koteski, CRM PR 40326.">
 <link rel="canonical" href="https://koteski.com.br/blog/">
 <meta property="og:title" content="Blog | Dra. Rebeca Koteski">
-<meta property="og:image" content="https://raw.githubusercontent.com/hmfbr1302/rk/main/img/og-image.png">
+<meta property="og:image" content="https://koteski.com.br/img/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
@@ -425,7 +425,7 @@ footer a:hover{color:var(--gold)}
 <div class="filters-bar" id="filtersBar">
   <div class="filters-inner">
     <span class="filter-label">Filtrar</span>
-    <button class="filter-btn active" onclick="filtrar('todos',this)">Todos <span class="filter-count">12</span></button>
+    <button class="filter-btn active" onclick="filtrar('todos',this)">Todos <span class="filter-count">13</span></button>
     <button class="filter-btn" onclick="filtrar('lipoaspiracao',this)">Lipoaspiração</button>
     <button class="filter-btn" onclick="filtrar('mamoplastia',this)">Mamoplastia</button>
     <button class="filter-btn" onclick="filtrar('rinoplastia',this)">Rinoplastia</button>
@@ -433,6 +433,7 @@ footer a:hover{color:var(--gold)}
     <button class="filter-btn" onclick="filtrar('comparacao',this)">Comparações</button>
     <button class="filter-btn" onclick="filtrar('recuperacao',this)">Recuperação</button>
     <button class="filter-btn" onclick="filtrar('curitiba',this)">Curitiba</button>
+    <button class="filter-btn" onclick="filtrar('estetica',this)">Estética</button>
   </div>
 </div>
 
@@ -616,6 +617,20 @@ footer a:hover{color:var(--gold)}
         </div>
       </a>
 
+      <a href="/blog/pele-glow-curitiba/" class="card" data-cat="estetica">
+        <div class="card-img-wrap">
+          <img src="/img/blog/b-procedimentos.jpg" alt="" class="card-img" loading="lazy">
+          <div class="card-overlay"></div>
+          <span class="card-badge">Pele</span>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Bioestimuladores</div>
+          <h3 class="card-title">Pele glow sem filtro — é possível</h3>
+          <p class="card-excerpt">Nanofat, PDRN e Plasma Rico em Fibrinogênio com microagulhamento: o protocolo que transforma a qualidade da pele de dentro para fora.</p>
+          <span class="card-leia">Ler artigo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
       <a href="/blog/lipoaspiracao-no-batel/" class="card" data-cat="lipoaspiracao curitiba">
         <div class="card-img-wrap">
           <img src="/img/blog/b-bairros.jpg" alt="" class="card-img" loading="lazy">
@@ -687,7 +702,26 @@ const obs = new IntersectionObserver((entries)=>{
 },{threshold:.08, rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.card').forEach(c=>obs.observe(c));
 
-// Filtros
+// Filtros — calcula contagens no load
+function calcCounts(){
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    const cat = btn.getAttribute('onclick').match(/filtrar\('([^']+)'/)?.[1];
+    if (!cat) return;
+    let n = 0;
+    document.querySelectorAll('.card[data-cat],.destaque[data-cat]').forEach(c => {
+      if (cat === 'todos' || c.dataset.cat.includes(cat)) n++;
+    });
+    let cnt = btn.querySelector('.filter-count');
+    if (!cnt) {
+      cnt = document.createElement('span');
+      cnt.className = 'filter-count';
+      btn.appendChild(cnt);
+    }
+    cnt.textContent = n;
+  });
+}
+document.addEventListener('DOMContentLoaded', calcCounts);
+
 function filtrar(cat, btn){
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
