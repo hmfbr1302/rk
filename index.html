@@ -560,7 +560,7 @@ footer{background:var(--v3);padding:3rem 0 2rem}
         <span class="hero-tag-text">Cirurgia Plástica em Curitiba</span>
       </div>
       <h1 class="hero-title" id="hero-title">O corpo que você<br>sempre <em>imaginou</em><br>começa aqui</h1>
-      <p class="hero-sub">Cirurgiã plástica titulada com 108 procedimentos realizados. Cada cirurgia planejada com cuidado, técnica e respeito à sua identidade.</p>
+      <p class="hero-sub">Cirurgiã plástica com mais de 208 procedimentos realizados. Cada cirurgia planejada com cuidado, técnica e respeito à sua identidade.</p>
       <div class="hero-actions">
         <a href="#avaliacao" class="btn-hero-primary">
           Fazer avaliação gratuita
@@ -599,7 +599,7 @@ footer{background:var(--v3);padding:3rem 0 2rem}
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item reveal">
-        <div class="stat-number"><sup>+</sup><span id="stat-proc">108</span></div>
+        <div class="stat-number"><sup>+</sup><span id="stat-proc">208</span></div>
         <div class="stat-label">Procedimentos realizados</div>
         <div class="stat-gold-line"></div>
       </div>
@@ -644,7 +644,7 @@ footer{background:var(--v3);padding:3rem 0 2rem}
         <div class="eyebrow">Sobre a especialista</div>
         <h2>Cirurgia plástica feita<br>com <em>propósito</em></h2>
         <p class="sobre-body">A Dra. Rebeca Koteski é cirurgiã plástica titulada em Curitiba com especialização em procedimentos corporais e faciais que respeitam a identidade de cada paciente. Seu trabalho parte de um princípio simples: cada corpo é único e merece um plano cirúrgico exclusivo.</p>
-        <p class="sobre-body">Com <span id="sobre-proc">108</span> procedimentos realizados, a Dra. Rebeca combina técnica avançada com um atendimento humanizado, do primeiro contato até o acompanhamento completo no período de recuperação.</p>
+        <p class="sobre-body">Com <span id="sobre-proc">208</span> procedimentos realizados, a Dra. Rebeca combina técnica avançada com um atendimento humanizado, do primeiro contato até o acompanhamento completo no período de recuperação.</p>
         <ul class="cred-list">
           <li><div class="cred-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Membro da Sociedade Brasileira de Cirurgia Plástica</li>
           <li><div class="cred-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Especialista em lipoaspiração, mamoplastia e rinoplastia</li>
@@ -964,11 +964,11 @@ var UTM = (function(){
 
 /* ── CONTADOR DINÂMICO DE PROCEDIMENTOS ─────────────────── */
 (function(){
-  // Data de referência: 108 procedimentos em 27/03/2026
-  // A cada 3 dias, +1 procedimento
-  var BASE_COUNT = 108;
-  var BASE_DATE  = new Date('2026-03-27T00:00:00Z');
-  var DAYS_PER_PROC = 3;
+  // Data de referência: 208 procedimentos em 28/04/2026
+  // A cada 7 dias, +1 procedimento
+  var BASE_COUNT = 208;
+  var BASE_DATE  = new Date('2026-04-28T00:00:00Z');
+  var DAYS_PER_PROC = 7;
 
   var now  = new Date();
   var diff = Math.floor((now - BASE_DATE) / (1000 * 60 * 60 * 24));
@@ -984,7 +984,7 @@ var UTM = (function(){
 
   // Atualizar também o texto da seção Sobre se existir
   document.querySelectorAll('.sobre-body').forEach(function(p){
-    p.innerHTML = p.innerHTML.replace(/\b108\b/g, total);
+    p.innerHTML = p.innerHTML.replace(/\b208\b/g, total);
   });
 
   // Atualizar og:image não é possível via JS, mas o número no site fica correto
@@ -1056,7 +1056,7 @@ window.addEventListener('scroll',function(){
 /* ── MELHORIA 4: COUNTER ANIMATION ─────────────────────── */
 (function(){
   var STATS=[
-    {el:null,target:108,suffix:'',decimal:false,prefix:'+'},
+    {el:null,target:208,suffix:'',decimal:false,prefix:'+'},
     {el:null,target:8,suffix:' anos',decimal:false,prefix:''},
     {el:null,target:98,suffix:'%',decimal:false,prefix:''},
     {el:null,target:2,suffix:'M',decimal:false,prefix:'+'}
