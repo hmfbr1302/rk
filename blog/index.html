@@ -4,372 +4,103 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Blog | Dra. Rebeca Koteski · Cirurgia Plástica em Curitiba</title>
-<meta name="description" content="Artigos sobre cirurgia plástica em Curitiba. Tire suas dúvidas antes de decidir. Dra. Rebeca Koteski, CRM PR 40326.">
+<meta name="description" content="Artigos sobre cirurgia plástica em Curitiba: lipoaspiração, mamoplastia, rinoplastia, abdominoplastia e muito mais. Dra. Rebeca Koteski, CRM PR 40326.">
 <link rel="canonical" href="https://koteski.com.br/blog/">
-<meta property="og:title" content="Blog | Dra. Rebeca Koteski">
-<meta property="og:image" content="https://koteski.com.br/img/og-image.png">
+<meta property="og:title" content="Blog | Dra. Rebeca Koteski · Cirurgia Plástica">
+<meta property="og:description" content="Tire suas dúvidas sobre cirurgia plástica. Artigos educativos da Dra. Rebeca Koteski.">
+<meta property="og:image" content="https://koteski.com.br/img/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:#FEFCFB;color:#1A1010;overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;background:#FEFCFB;color:#1A1010}
 
-:root{
-  --v:#6B1A2A;--v2:#4A0F1C;--v3:#8B2A3C;--v4:rgba(107,26,42,.06);
-  --gold:#C9A96E;--gold2:#A0834A;--gold3:rgba(160,131,74,.15);
-  --cream:#FEFCFB;--cream2:#F8F2F0;--cream3:#EDE0DC;--cream4:#E0D0CC;
-  --txt:#1A1010;--txt2:#5A4040;--txt3:#9A8080;--txt4:#C4B0B0;
-  --r:14px;--ease:cubic-bezier(.22,1,.36,1);
-  --shadow:0 4px 24px rgba(107,26,42,.08);
-  --shadow-lg:0 16px 48px rgba(107,26,42,.14);
-}
+/* NAV */
+nav{background:#4A0F1C;padding:1rem 0;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1080px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(201,169,110,.35);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;letter-spacing:1px;flex-shrink:0}
+.logo-name{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,.85)}
+.logo-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);display:block}
+.nav-cta{background:#A0834A;color:#fff;padding:9px 18px;border-radius:50px;font-size:13px;font-weight:500;text-decoration:none;white-space:nowrap}
 
-/* ── NAV ─────────────────────────────────────────────── */
-nav{
-  background:rgba(74,15,28,.97);
-  backdrop-filter:blur(16px);
-  padding:1rem 0;position:sticky;top:0;z-index:200;
-  border-bottom:1px solid rgba(201,169,110,.12);
-  transition:padding .3s
-}
-nav.slim{padding:.75rem 0}
-.nav-inner{max-width:1140px;margin:0 auto;padding:0 1.75rem;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:11px;text-decoration:none}
-.logo-mark{
-  width:38px;height:38px;border-radius:50%;
-  background:rgba(201,169,110,.12);border:1.5px solid rgba(201,169,110,.3);
-  color:var(--gold);display:flex;align-items:center;justify-content:center;
-  font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;letter-spacing:1px;
-  flex-shrink:0;transition:all .35s var(--ease)
-}
-.logo:hover .logo-mark{background:rgba(201,169,110,.2);transform:rotate(8deg)}
-.logo-name{font-family:'Cormorant Garamond',serif;font-size:14.5px;color:rgba(254,252,251,.88);line-height:1.2}
-.logo-tag{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(254,252,251,.32);display:block;margin-top:1px}
-.nav-cta{
-  background:var(--gold2);color:#fff;padding:9px 20px;border-radius:50px;
-  font-size:12.5px;font-weight:500;text-decoration:none;letter-spacing:.3px;
-  transition:all .25s var(--ease);position:relative;overflow:hidden
-}
-.nav-cta::after{content:'';position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(160,131,74,.35)}
-.nav-cta:hover::after{transform:scaleX(1)}
-.nav-cta span{position:relative;z-index:1}
+/* HERO */
+.hero{background:linear-gradient(135deg,#4A0F1C,#6B1A2A);padding:4rem 0 3rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;border:1px solid rgba(201,169,110,.08);pointer-events:none}
+.hero-inner{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(201,169,110,.6);font-family:'DM Sans',sans-serif;margin-bottom:12px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);color:#fff;font-weight:300;line-height:1.15;margin-bottom:.85rem}
+.hero h1 em{color:#C9A96E;font-style:italic}
+.hero p{font-size:15px;color:rgba(255,255,255,.55);max-width:480px;line-height:1.75;font-weight:300}
 
-/* ── HERO ────────────────────────────────────────────── */
-.hero{
-  background:linear-gradient(140deg,var(--v2) 0%,var(--v) 55%,#8B2040 100%);
-  padding:5rem 0 4rem;position:relative;overflow:hidden
-}
-.hero::before{content:'';position:absolute;top:-120px;right:-120px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(201,169,110,.07);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-60px;left:10%;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.06),transparent 70%);pointer-events:none}
-.hero-inner{max-width:1140px;margin:0 auto;padding:0 1.75rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.hero-text{z-index:1}
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:10px;letter-spacing:3px;text-transform:uppercase;
-  color:rgba(201,169,110,.65);margin-bottom:1.5rem;
-  animation:fadeUp .7s var(--ease) .1s both
-}
-.hero-eyebrow-line{width:24px;height:1px;background:rgba(201,169,110,.4)}
-.hero-h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(36px,4.5vw,58px);
-  color:#fff;font-weight:300;line-height:1.1;margin-bottom:1.1rem;
-  animation:fadeUp .8s var(--ease) .2s both
-}
-.hero-h1 em{color:var(--gold);font-style:italic;display:block}
-.hero-p{
-  font-size:15px;color:rgba(255,255,255,.55);max-width:400px;
-  line-height:1.8;font-weight:300;margin-bottom:2rem;
-  animation:fadeUp .8s var(--ease) .35s both
-}
-.hero-btns{
-  display:flex;gap:10px;flex-wrap:wrap;
-  animation:fadeUp .8s var(--ease) .5s both
-}
-.btn-primary{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--gold2);color:#fff;padding:13px 26px;
-  border-radius:50px;font-size:13.5px;font-weight:500;
-  text-decoration:none;transition:all .3s var(--ease);position:relative;overflow:hidden
-}
-.btn-primary::after{content:'';position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(160,131,74,.4)}
-.btn-primary:hover::after{transform:scaleX(1)}
-.btn-primary span,.btn-primary svg{position:relative;z-index:1}
-.btn-ghost{
-  display:inline-flex;align-items:center;gap:8px;
-  background:transparent;color:rgba(255,255,255,.6);
-  border:1px solid rgba(255,255,255,.18);
-  padding:12px 22px;border-radius:50px;font-size:13px;font-weight:400;
-  text-decoration:none;transition:all .3s var(--ease)
-}
-.btn-ghost:hover{border-color:rgba(255,255,255,.45);color:#fff;transform:translateY(-1px)}
+/* FILTROS */
+.filters{background:#F8F2F0;border-bottom:1px solid #E0D0CC;padding:1rem 0;position:sticky;top:64px;z-index:90;overflow-x:auto}
+.filters-inner{max-width:1080px;margin:0 auto;padding:0 1.5rem;display:flex;gap:8px;white-space:nowrap}
+.filter-btn{border:1.5px solid #E0D0CC;background:#fff;color:#5A4040;padding:7px 16px;border-radius:50px;font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;flex-shrink:0}
+.filter-btn:hover,.filter-btn.active{background:#6B1A2A;border-color:#6B1A2A;color:#fff}
 
-/* Stats no hero */
-.hero-stats{
-  display:flex;flex-direction:column;gap:1rem;
-  animation:fadeUp .8s var(--ease) .4s both
-}
-.hero-stat-card{
-  background:rgba(255,255,255,.07);backdrop-filter:blur(10px);
-  border:1px solid rgba(201,169,110,.15);border-radius:12px;
-  padding:1.1rem 1.4rem;display:flex;align-items:center;gap:14px;
-  transition:all .3s var(--ease)
-}
-.hero-stat-card:hover{background:rgba(255,255,255,.11);transform:translateX(4px);border-color:rgba(201,169,110,.3)}
-.hero-stat-n{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);font-weight:300;line-height:1;min-width:54px}
-.hero-stat-l{font-size:12px;color:rgba(255,255,255,.5);font-weight:300;line-height:1.45}
-
-/* ── FILTROS ─────────────────────────────────────────── */
-.filters-bar{
-  background:var(--cream);border-bottom:1px solid var(--cream4);
-  padding:.85rem 0;position:sticky;top:62px;z-index:150;
-  overflow-x:auto;scrollbar-width:none
-}
-.filters-bar::-webkit-scrollbar{display:none}
-.filters-inner{
-  max-width:1140px;margin:0 auto;padding:0 1.75rem;
-  display:flex;gap:6px;align-items:center;white-space:nowrap
-}
-.filter-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--txt4);margin-right:8px;flex-shrink:0}
-.filter-btn{
-  border:1.5px solid var(--cream4);background:var(--cream);
-  color:var(--txt3);padding:6px 16px;border-radius:50px;
-  font-size:11.5px;font-weight:500;cursor:pointer;
-  transition:all .22s var(--ease);font-family:'DM Sans',sans-serif;
-  flex-shrink:0;letter-spacing:.2px
-}
-.filter-btn:hover{border-color:var(--v);color:var(--v);transform:translateY(-1px)}
-.filter-btn.active{background:var(--v);border-color:var(--v);color:#fff;box-shadow:0 4px 12px rgba(107,26,42,.2)}
-.filter-count{
-  font-size:9px;background:rgba(107,26,42,.12);color:var(--v);
-  padding:1px 6px;border-radius:20px;margin-left:4px;
-  transition:background .2s
-}
-.filter-btn.active .filter-count{background:rgba(255,255,255,.2);color:rgba(255,255,255,.8)}
-
-/* ── MAIN ────────────────────────────────────────────── */
-.main{padding:2.5rem 0 5rem}
-.container{max-width:1140px;margin:0 auto;padding:0 1.75rem}
-
-/* ── DESTAQUE ────────────────────────────────────────── */
-.destaque-wrap{margin-bottom:2rem}
-.destaque{
-  display:grid;grid-template-columns:1.1fr 1fr;
-  border-radius:20px;overflow:hidden;text-decoration:none;
-  background:var(--cream);border:1.5px solid var(--cream3);
-  box-shadow:var(--shadow);
-  transition:transform .45s var(--ease),box-shadow .45s;
-  position:relative
-}
-.destaque:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
-.destaque-img-wrap{position:relative;overflow:hidden;min-height:360px}
-.destaque-img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease),filter .4s}
-.destaque:hover .destaque-img{transform:scale(1.06)}
-.destaque-badge{
-  position:absolute;top:1.1rem;left:1.1rem;z-index:2;
-  background:var(--v2);color:var(--gold);
-  font-size:9px;letter-spacing:2px;text-transform:uppercase;
-  padding:5px 12px;border-radius:50px;
-  border:1px solid rgba(201,169,110,.3)
-}
-.destaque-body{
-  padding:2.5rem 2.25rem;display:flex;flex-direction:column;
-  justify-content:center;background:var(--cream);position:relative
-}
-.destaque-body::before{
-  content:'';position:absolute;top:0;left:0;bottom:0;width:3px;
-  background:linear-gradient(to bottom,var(--gold2),var(--v));
-  transform:scaleY(0);transform-origin:top;
-  transition:transform .4s var(--ease)
-}
-.destaque:hover .destaque-body::before{transform:scaleY(1)}
-.destaque-cat{
-  font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--gold2);margin-bottom:1rem;display:flex;align-items:center;gap:8px
-}
-.destaque-cat::before{content:'';width:18px;height:1px;background:var(--gold2)}
-.destaque-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(22px,2.5vw,32px);
-  color:var(--txt);font-weight:400;line-height:1.2;margin-bottom:.85rem;
-  transition:color .2s
-}
-.destaque-title em{color:var(--v);font-style:italic}
-.destaque:hover .destaque-title{color:var(--v2)}
-.destaque-excerpt{
-  font-size:14px;color:var(--txt2);line-height:1.85;
-  font-weight:300;margin-bottom:1.75rem;
-  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden
-}
-.destaque-leia{
-  display:inline-flex;align-items:center;gap:8px;
-  color:var(--v);font-size:12.5px;font-weight:500;letter-spacing:.5px;
-  transition:gap .3s var(--ease)
-}
-.destaque-leia svg{transition:transform .3s var(--ease)}
-.destaque:hover .destaque-leia{gap:14px;color:var(--v2)}
-.destaque:hover .destaque-leia svg{transform:translateX(4px)}
-
-/* ── GRID ────────────────────────────────────────────── */
+/* GRID */
+.container{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+.section{padding:3rem 0}
 .grid{display:grid;gap:1.25rem;grid-template-columns:1fr}
 @media(min-width:560px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
 
-/* ── CARD ────────────────────────────────────────────── */
-.card{
-  background:var(--cream);border:1.5px solid var(--cream3);
-  border-radius:var(--r);overflow:hidden;text-decoration:none;
-  display:flex;flex-direction:column;position:relative;
-  box-shadow:var(--shadow);
-  opacity:0;transform:translateY(20px);
-  transition:opacity .55s var(--ease),transform .55s var(--ease),box-shadow .4s,border-color .3s
-}
-.card.visible{opacity:1;transform:none}
-.card:hover{
-  transform:translateY(-7px);
-  box-shadow:var(--shadow-lg);
-  border-color:rgba(160,131,74,.3)
-}
+/* CARDS */
+.card{background:#fff;border:1px solid #E0D0CC;border-radius:14px;overflow:hidden;transition:transform .3s,box-shadow .3s;text-decoration:none;display:block}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(107,26,42,.1)}
+.card-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#F0E8E4;display:flex;align-items:center;justify-content:center;font-size:32px}
+.card-body{padding:1.2rem}
+.card-cat{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#A0834A;font-weight:500;margin-bottom:7px}
+.card-title{font-family:'Cormorant Garamond',serif;font-size:18px;color:#1A1010;line-height:1.3;margin-bottom:.6rem;font-weight:500}
+.card-excerpt{font-size:12.5px;color:#5A4040;line-height:1.7;margin-bottom:.9rem;font-weight:300;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-leia{font-size:12px;color:#6B1A2A;font-weight:500;display:inline-flex;align-items:center;gap:5px}
+.card-leia::after{content:'→'}
 
-/* linha dourada animada no topo */
-.card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--gold2),var(--v));
-  transform:scaleX(0);transform-origin:left;
-  transition:transform .35s var(--ease);z-index:2
-}
-.card:hover::before{transform:scaleX(1)}
+/* SEÇÕES ESPECIAIS */
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,32px);color:#1A1010;margin-bottom:1.75rem;font-weight:400}
+.section-title em{color:#6B1A2A;font-style:italic}
 
-.card-img-wrap{position:relative;overflow:hidden;aspect-ratio:16/9}
-.card-img{
-  width:100%;height:100%;object-fit:cover;
-  transition:transform .6s var(--ease),filter .4s
-}
-.card:hover .card-img{transform:scale(1.07);filter:brightness(1.04)}
-.card-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to bottom,transparent 55%,rgba(74,15,28,.55));
-  opacity:0;transition:opacity .35s
-}
-.card:hover .card-overlay{opacity:1}
-.card-badge{
-  position:absolute;bottom:.85rem;left:.85rem;
-  background:rgba(74,15,28,.88);backdrop-filter:blur(6px);
-  border:1px solid rgba(201,169,110,.25);
-  color:var(--gold);font-size:9px;letter-spacing:1.5px;
-  text-transform:uppercase;padding:4px 10px;border-radius:50px;
-  transform:translateY(4px);opacity:0;
-  transition:all .3s var(--ease)
-}
-.card:hover .card-badge{opacity:1;transform:none}
+/* CTA BANNER */
+.cta-banner{background:linear-gradient(135deg,#4A0F1C,#6B1A2A);border-radius:20px;padding:2.5rem 2rem;text-align:center;margin:3rem 0}
+.cta-banner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,4vw,34px);color:#fff;margin-bottom:.75rem;font-weight:400}
+.cta-banner h2 em{color:#C9A96E;font-style:italic}
+.cta-banner p{font-size:14px;color:rgba(255,255,255,.55);margin-bottom:1.75rem;font-weight:300}
+.cta-btn{background:#A0834A;color:#fff;padding:14px 32px;border-radius:50px;font-size:15px;font-weight:500;text-decoration:none;display:inline-block;transition:background .2s}
+.cta-btn:hover{background:#C9A96E}
 
-.card-body{
-  padding:1.2rem 1.25rem 1.5rem;
-  flex:1;display:flex;flex-direction:column
-}
-.card-cat{
-  font-size:10px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--gold2);margin-bottom:.6rem;font-weight:500
-}
-.card-title{
-  font-family:'Cormorant Garamond',serif;font-size:19px;
-  color:var(--txt);line-height:1.3;margin-bottom:.6rem;font-weight:500;
-  transition:color .2s
-}
-.card:hover .card-title{color:var(--v)}
-.card-excerpt{
-  font-size:12.5px;color:var(--txt2);line-height:1.75;
-  font-weight:300;flex:1;margin-bottom:.9rem;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden
-}
-.card-leia{
-  display:inline-flex;align-items:center;gap:5px;
-  font-size:11.5px;color:var(--v);font-weight:500;letter-spacing:.4px;
-  border-bottom:1px solid transparent;
-  transition:all .25s var(--ease)
-}
-.card-leia svg{transition:transform .25s var(--ease)}
-.card:hover .card-leia{gap:9px;border-color:rgba(107,26,42,.25)}
-.card:hover .card-leia svg{transform:translateX(3px)}
+/* DESTAQUE (card grande) */
+.destaque{background:#fff;border:1px solid #E0D0CC;border-radius:14px;overflow:hidden;display:grid;text-decoration:none;transition:transform .3s,box-shadow .3s;margin-bottom:1.25rem}
+@media(min-width:640px){.destaque{grid-template-columns:1fr 1fr}}
+.destaque:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(107,26,42,.1)}
+.destaque-img{aspect-ratio:16/9;object-fit:cover;background:#F0E8E4;display:flex;align-items:center;justify-content:center;font-size:48px;min-height:200px}
+@media(min-width:640px){.destaque-img{aspect-ratio:auto;height:100%}}
+.destaque-body{padding:1.75rem}
+.destaque-body .card-cat{font-size:10px;margin-bottom:10px}
+.destaque-body .card-title{font-size:clamp(20px,3vw,26px);margin-bottom:.85rem}
+.destaque-body .card-excerpt{-webkit-line-clamp:3;margin-bottom:1.25rem}
 
-/* ── CTA BANNER ──────────────────────────────────────── */
-.cta-banner{
-  margin:3rem 0 0;border-radius:20px;
-  background:linear-gradient(140deg,var(--v2),var(--v));
-  border:1px solid rgba(201,169,110,.12);padding:2.75rem 2.5rem;
-  position:relative;overflow:hidden;
-  display:grid;grid-template-columns:1fr auto;gap:2.5rem;align-items:center
-}
-.cta-banner::before{
-  content:'';position:absolute;top:-80px;right:-80px;
-  width:280px;height:280px;border-radius:50%;
-  border:1px solid rgba(201,169,110,.08);pointer-events:none
-}
-.cta-banner-text h2{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(22px,3vw,32px);color:#fff;
-  font-weight:400;margin-bottom:.65rem;line-height:1.2
-}
-.cta-banner-text h2 em{color:var(--gold);font-style:italic}
-.cta-banner-text p{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.7;font-weight:300}
-.cta-banner-btns{display:flex;flex-direction:column;gap:9px;flex-shrink:0;position:relative;z-index:1}
-.btn-cta-p{
-  background:var(--gold2);color:#fff;padding:13px 26px;
-  border-radius:50px;font-size:13.5px;font-weight:500;
-  text-decoration:none;text-align:center;white-space:nowrap;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  transition:all .3s var(--ease);position:relative;overflow:hidden
-}
-.btn-cta-p::after{content:'';position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
-.btn-cta-p:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(160,131,74,.4)}
-.btn-cta-p:hover::after{transform:scaleX(1)}
-.btn-cta-p span,.btn-cta-p svg{position:relative;z-index:1}
-.btn-cta-s{
-  background:transparent;color:rgba(255,255,255,.5);
-  border:1px solid rgba(255,255,255,.15);
-  padding:11px 22px;border-radius:50px;font-size:12.5px;
-  text-decoration:none;text-align:center;white-space:nowrap;
-  transition:all .3s var(--ease)
-}
-.btn-cta-s:hover{border-color:rgba(255,255,255,.4);color:#fff}
+/* FOOTER */
+footer{background:#4A0F1C;padding:2rem 0;margin-top:3rem}
+footer p{font-size:11px;color:rgba(255,255,255,.25);text-align:center;font-weight:300}
+footer a{color:rgba(201,169,110,.5);text-decoration:none}
 
-/* ── FOOTER ──────────────────────────────────────────── */
-footer{
-  background:var(--v2);padding:2rem 0;
-  border-top:1px solid rgba(201,169,110,.1)
-}
-footer p{font-size:11px;color:rgba(255,255,255,.25);text-align:center;line-height:1.9;font-weight:300}
-footer a{color:rgba(201,169,110,.45);text-decoration:none;transition:color .2s}
-footer a:hover{color:var(--gold)}
+/* HIDDEN */
+.card[data-cat]{transition:opacity .3s,transform .3s}
+.card.hidden{display:none}
+.destaque.hidden{display:none}
 
-/* ── ANIMAÇÕES ───────────────────────────────────────── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-
-/* ── HIDDEN ──────────────────────────────────────────── */
-.card.hidden,.destaque.hidden{display:none}
-
-/* ── MOBILE ──────────────────────────────────────────── */
-@media(max-width:768px){
-  .hero-inner{grid-template-columns:1fr;gap:1.5rem}
-  .hero-stats{flex-direction:row;flex-wrap:wrap;gap:.75rem}
-  .hero-stat-card{flex:1;min-width:130px}
+@media(max-width:640px){
+  .filters{top:58px}
   .destaque{grid-template-columns:1fr}
-  .destaque-img-wrap{min-height:220px}
-  .cta-banner{grid-template-columns:1fr;gap:1.5rem}
+  .cta-banner{padding:2rem 1.25rem}
 }
 </style>
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#4A0F1C">
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="nav">
+<nav>
   <div class="nav-inner">
     <a href="/" class="logo">
       <div class="logo-mark">RK</div>
@@ -378,361 +109,196 @@ footer a:hover{color:var(--gold)}
         <span class="logo-tag">Cirurgia Plástica · CRM PR 40326</span>
       </div>
     </a>
-    <a href="/#avaliacao" class="nav-cta"><span>Avaliação gratuita</span></a>
+    <a href="/#avaliacao" class="nav-cta">Avaliação gratuita</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-eyebrow">
-        <span class="hero-eyebrow-line"></span>
-        Conteúdo educativo
-      </div>
-      <h1 class="hero-h1">
-        Tire suas dúvidas<br>antes de <em>decidir</em>
-      </h1>
-      <p class="hero-p">Artigos escritos com transparência e rigor técnico pela Dra. Rebeca Koteski, para quem ainda está pesquisando.</p>
-      <div class="hero-btns">
-        <a href="/#avaliacao" class="btn-primary">
-          <span>Avaliação gratuita</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#artigos" class="btn-ghost">
-          Ver artigos
-        </a>
-      </div>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat-card">
-        <div class="hero-stat-n" id="statProc">208</div>
-        <div class="hero-stat-l">Procedimentos<br>realizados</div>
-      </div>
-      <div class="hero-stat-card">
-        <div class="hero-stat-n">264</div>
-        <div class="hero-stat-l">Artigos<br>publicados</div>
-      </div>
-      <div class="hero-stat-card">
-        <div class="hero-stat-n">CRM</div>
-        <div class="hero-stat-l">PR 40326<br>Titulada SBCP</div>
-      </div>
-    </div>
+    <div class="eyebrow">Conteúdo educativo</div>
+    <h1>Tire suas dúvidas antes<br>de <em>decidir</em></h1>
+    <p>Artigos sobre cirurgia plástica escritos com transparência e rigor técnico pela Dra. Rebeca Koteski.</p>
   </div>
 </section>
 
-<!-- FILTROS -->
-<div class="filters-bar" id="filtersBar">
+<div class="filters">
   <div class="filters-inner">
-    <span class="filter-label">Filtrar</span>
-    <button class="filter-btn active" onclick="filtrar('todos',this)">Todos <span class="filter-count">13</span></button>
-    <button class="filter-btn" onclick="filtrar('lipoaspiracao',this)">Lipoaspiração</button>
-    <button class="filter-btn" onclick="filtrar('mamoplastia',this)">Mamoplastia</button>
-    <button class="filter-btn" onclick="filtrar('rinoplastia',this)">Rinoplastia</button>
-    <button class="filter-btn" onclick="filtrar('abdominoplastia',this)">Abdominoplastia</button>
-    <button class="filter-btn" onclick="filtrar('comparacao',this)">Comparações</button>
-    <button class="filter-btn" onclick="filtrar('recuperacao',this)">Recuperação</button>
-    <button class="filter-btn" onclick="filtrar('curitiba',this)">Curitiba</button>
-    <button class="filter-btn" onclick="filtrar('estetica',this)">Estética</button>
+    <button class="filter-btn active" onclick="filtrar('todos')">Todos</button>
+    <button class="filter-btn" onclick="filtrar('lipoaspiracao')">Lipoaspiração</button>
+    <button class="filter-btn" onclick="filtrar('mamoplastia')">Mamoplastia</button>
+    <button class="filter-btn" onclick="filtrar('rinoplastia')">Rinoplastia</button>
+    <button class="filter-btn" onclick="filtrar('abdominoplastia')">Abdominoplastia</button>
+    <button class="filter-btn" onclick="filtrar('comparacao')">Comparações</button>
+    <button class="filter-btn" onclick="filtrar('curitiba')">Curitiba</button>
+    <button class="filter-btn" onclick="filtrar('recuperacao')">Recuperação</button>
   </div>
 </div>
 
-<!-- ARTIGOS -->
-<section class="main" id="artigos">
-  <div class="container">
+<div class="container">
+  <section class="section">
 
     <!-- DESTAQUE -->
-    <div class="destaque-wrap">
-      <a href="/blog/lipoaspiracao-em-curitiba/" class="destaque" data-cat="lipoaspiracao curitiba">
-        <div class="destaque-img-wrap">
-          <img src="/img/blog/b-lipo-destaque.jpg" alt="Lipo HD Curitiba" class="destaque-img">
-          <div class="destaque-badge">Destaque da semana</div>
-        </div>
-        <div class="destaque-body">
-          <div class="destaque-cat">Lipoaspiração · Curitiba</div>
-          <h2 class="destaque-title">Lipo HD em Curitiba: o que é e para quem é <em>indicada</em></h2>
-          <p class="destaque-excerpt">A lipoaspiração de alta definição vai além da remoção de gordura. Entenda a técnica que esculpe o contorno corporal com precisão cirúrgica e descubra se você é candidata.</p>
-          <span class="destaque-leia">
-            Ler artigo completo
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </span>
-        </div>
-      </a>
-    </div>
+    <a href="/blog/lipoaspiracao-em-curitiba/" class="destaque" data-cat="lipoaspiracao curitiba">
+      <img class="destaque-img" src="/img/blog/b-lipo-destaque.jpg" alt="Lipo HD em Curitiba" style="object-fit:cover;width:100%;height:100%;min-height:220px">
+      <div class="destaque-body">
+        <div class="card-cat">Lipoaspiração · Destaque</div>
+        <div class="card-title">Lipo HD em Curitiba: o que é, como funciona e para quem é indicada</div>
+        <div class="card-excerpt">A lipoaspiração de alta definição vai além da remoção de gordura. Entenda a técnica que esculpe o contorno corporal com precisão cirúrgica e saiba se você é candidata.</div>
+        <span class="card-leia">Ler artigo completo</span>
+      </div>
+    </a>
 
-    <!-- GRID -->
-    <div class="grid" id="grid">
+    <!-- GRID PRINCIPAL -->
+    <div class="grid">
 
       <a href="/blog/silicone-redondo-ou-anatomico/" class="card" data-cat="mamoplastia comparacao">
-        <div class="card-img-wrap">
-          <img src="/img/blog/b-silicone.jpg" alt="" class="card-img" loading="lazy">
-          <div class="card-overlay"></div>
-          <span class="card-badge">Mamoplastia</span>
-        </div>
+        <img class="card-img" src="/img/blog/b-silicone.jpg" alt="Silicone" style="object-fit:cover;width:100%;aspect-ratio:16/9">
         <div class="card-body">
           <div class="card-cat">Mamoplastia</div>
-          <h3 class="card-title">Silicone redondo ou anatômico: qual escolher?</h3>
-          <p class="card-excerpt">Diferenças e qual implante é mais indicado para o seu caso e perfil corporal.</p>
-          <span class="card-leia">Ler artigo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <div class="card-title">Silicone redondo ou anatômico: qual é a melhor escolha?</div>
+          <div class="card-excerpt">Entenda as diferenças e descubra qual implante é mais indicado para o seu caso.</div>
+          <span class="card-leia">Saiba mais</span>
         </div>
       </a>
 
       <a href="/blog/quanto-custa-lipoaspiracao/" class="card" data-cat="lipoaspiracao">
-        <div class="card-img-wrap">
-          <img src="/img/blog/b-custo.jpg" alt="" class="card-img" loading="lazy">
-          <div class="card-overlay"></div>
-          <span class="card-badge">Investimento</span>
-        </div>
+        <img class="card-img" src="/img/blog/b-custo.jpg" alt="Quanto custa" style="object-fit:cover;width:100%;aspect-ratio:16/9">
         <div class="card-body">
           <div class="card-cat">Lipoaspiração</div>
-          <h3 class="card-title">Quanto custa a lipoaspiração em Curitiba?</h3>
-          <p class="card-excerpt">Como funciona o plano de investimento personalizado e o que influencia o valor.</p>
-          <span class="card-leia">Ler artigo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <div class="card-title">Quanto custa a lipoaspiração em Curitiba?</div>
+          <div class="card-excerpt">Valores de referência, fatores que influenciam o preço e opções de parcelamento.</div>
+          <span class="card-leia">Saiba mais</span>
         </div>
       </a>
 
       <a href="/blog/recuperacao-da-lipoaspiracao/" class="card" data-cat="lipoaspiracao recuperacao">
-        <div class="card-img-wrap">
-          <img src="/img/blog/b-recuperacao.jpg" alt="" class="card-img" loading="lazy">
-          <div class="card-overlay"></div>
-          <span class="card-badge">Recuperação</span>
-        </div>
+        <img class="card-img" src="/img/blog/b-recuperacao.jpg" alt="Recuperação" style="object-fit:cover;width:100%;aspect-ratio:16/9">
         <div class="card-body">
           <div class="card-cat">Recuperação</div>
-          <h3 class="card-title">Recuperação da lipo: o que esperar na 1ª semana</h3>
-          <p class="card-excerpt">Guia completo do pós-operatório para quem quer saber tudo antes de decidir.</p>
-          <span class="card-leia">Ler artigo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <div class="card-title">O que esperar após a lipo: primeira semana e primeiro mês</div>
+          <div class="card-excerpt">Guia completo do pós-operatório para acelerar a recuperação com segurança.</div>
+          <span class="card-leia">Saiba mais</span>
         </div>
       </a>
 
       <a href="/blog/abdominoplastia-em-curitiba/" class="card" data-cat="abdominoplastia curitiba">
-        <div class="card-img-wrap">
-          <img src="/img/blog/b-abdominoplastia.jpg" alt="" class="card-img" loading="lazy">
-          <div class="card-overlay"></div>
-          <span class="card-badge">Abdominoplastia</span>
-        </div>
+        <img class="card-img" src="/img/blog/b-abdominoplastia.jpg" alt="Abdominoplastia" style="object-fit:cover;width:100%;aspect-ratio:16/9">
         <div class="card-body">
           <div class="card-cat">Abdominoplastia</div>
-          <h3 class="card-title">Abdominoplastia em Curitiba: tudo que você precisa saber</h3>
-          <p class="card-excerpt">Da indicação ao resultado: guia completo sobre o procedimento.</p>
-          <span class="card-leia">Ler artigo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <div class="card-title">Abdominoplastia em Curitiba: tudo que você precisa saber</div>
+          <div class="card-excerpt">Da indicação ao resultado: guia completo para quem considera fazer abdominoplastia.</div>
+          <span class="card-leia">Saiba mais</span>
         </div>
       </a>
 
       <a href="/blog/rinoplastia-em-curitiba/" class="card" data-cat="rinoplastia curitiba">
-        <div class="card-img-wrap">
-          <img src="/img/blog/b-rinoplastia.jpg" alt="" class="card-img" loading="lazy">
-          <div class="card-overlay"></div>
-          <span class="card-badge">Rinoplastia</span>
-        </div>
+        <img class="card-img" src="/img/blog/b-rinoplastia.jpg" alt="Rinoplastia" style="object-fit:cover;width:100%;aspect-ratio:16/9">
         <div class="card-body">
           <div class="card-cat">Rinoplastia</div>
-          <h3 class="card-title">Rinoplastia em Curitiba: resultado natural e harmonioso</h3>
-          <p class="card-excerpt">A rinoplastia moderna prioriza harmonia facial. O que avaliar ao escolher.</p>
-          <span class="card-leia">Ler artigo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <div class="card-title">Rinoplastia em Curitiba: resultado natural que respeita suas feições</div>
+          <div class="card-excerpt">A rinoplastia moderna prioriza harmonia facial. Saiba o que avaliar ao escolher uma cirurgiã.</div>
+          <span class="card-leia">Saiba mais</span>
         </div>
       </a>
 
       <a href="/blog/lipo-ou-dieta/" class="card" data-cat="lipoaspiracao comparacao">
-        <div class="card-img-wrap">
-          <img src="/img/blog/b-lipo-dieta.jpg" alt="" class="card-img" loading="lazy">
-          <div class="card-overlay"></div>
-          <span class="card-badge">Comparação</span>
-        </div>
+        <img class="card-img" src="/img/blog/b-lipo-dieta.jpg" alt="Lipo ou dieta" style="object-fit:cover;width:100%;aspect-ratio:16/9">
         <div class="card-body">
           <div class="card-cat">Comparação</div>
-          <h3 class="card-title">Lipo ou dieta: quando cada uma é indicada?</h3>
-          <p class="card-excerpt">Entenda quando a cirurgia resolve e como ela complementa hábitos saudáveis.</p>
-          <span class="card-leia">Ler artigo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <div class="card-title">Lipo ou dieta: qual a diferença?</div>
+          <div class="card-excerpt">Entenda quando a cirurgia é indicada e como ela se complementa com hábitos saudáveis.</div>
+          <span class="card-leia">Saiba mais</span>
         </div>
       </a>
 
       <a href="/blog/mamoplastia-em-curitiba/" class="card" data-cat="mamoplastia curitiba">
-        <div class="card-img-wrap">
-          <img src="/img/blog/b-mamoplastia.jpg" alt="" class="card-img" loading="lazy">
-          <div class="card-overlay"></div>
-          <span class="card-badge">Mamoplastia</span>
-        </div>
+        <img class="card-img" src="/img/blog/b-mamoplastia.jpg" alt="Mamoplastia" style="object-fit:cover;width:100%;aspect-ratio:16/9">
         <div class="card-body">
           <div class="card-cat">Mamoplastia</div>
-          <h3 class="card-title">Mamoplastia em Curitiba: aumento, redução e levantamento</h3>
-          <p class="card-excerpt">Técnicas disponíveis e qual procedimento é indicado para o seu caso.</p>
-          <span class="card-leia">Ler artigo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/cirurgia-plastica-em-curitiba/" class="card" data-cat="curitiba">
-        <div class="card-img-wrap">
-          <img src="/img/blog/b-como-escolher.jpg" alt="" class="card-img" loading="lazy">
-          <div class="card-overlay"></div>
-          <span class="card-badge">Guia prático</span>
-        </div>
-        <div class="card-body">
-          <div class="card-cat">Guia prático</div>
-          <h3 class="card-title">Como escolher uma cirurgiã plástica em Curitiba</h3>
-          <p class="card-excerpt">7 perguntas essenciais para fazer antes de escolher sua especialista.</p>
-          <span class="card-leia">Ler artigo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/abdominoplastia-ou-lipo/" class="card" data-cat="abdominoplastia comparacao">
-        <div class="card-img-wrap">
-          <img src="/img/blog/b-bariatrica.jpg" alt="" class="card-img" loading="lazy">
-          <div class="card-overlay"></div>
-          <span class="card-badge">Comparação</span>
-        </div>
-        <div class="card-body">
-          <div class="card-cat">Comparação</div>
-          <h3 class="card-title">Lipo ou abdominoplastia após a bariátrica?</h3>
-          <p class="card-excerpt">Qual procedimento é mais indicado após grande perda de peso.</p>
-          <span class="card-leia">Ler artigo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/recuperacao-da-mamoplastia/" class="card" data-cat="mamoplastia recuperacao">
-        <div class="card-img-wrap">
-          <img src="/img/blog/b-recuperacao-mama.jpg" alt="" class="card-img" loading="lazy">
-          <div class="card-overlay"></div>
-          <span class="card-badge">Recuperação</span>
-        </div>
-        <div class="card-body">
-          <div class="card-cat">Mamoplastia</div>
-          <h3 class="card-title">Recuperação da mamoplastia: cuidados essenciais</h3>
-          <p class="card-excerpt">Tudo sobre o pós-operatório para garantir o melhor resultado.</p>
-          <span class="card-leia">Ler artigo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/rinoplastia-cirurgica-ou-nao-cirurgica/" class="card" data-cat="rinoplastia comparacao">
-        <div class="card-img-wrap">
-          <img src="/img/blog/b-rino-comparacao.jpg" alt="" class="card-img" loading="lazy">
-          <div class="card-overlay"></div>
-          <span class="card-badge">Comparação</span>
-        </div>
-        <div class="card-body">
-          <div class="card-cat">Rinoplastia</div>
-          <h3 class="card-title">Rinoplastia cirúrgica ou não cirúrgica: qual é melhor?</h3>
-          <p class="card-excerpt">Diferenças, indicações e o que esperar de cada técnica.</p>
-          <span class="card-leia">Ler artigo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/pele-glow-curitiba/" class="card" data-cat="estetica">
-        <div class="card-img-wrap">
-          <img src="/img/blog/b-procedimentos.jpg" alt="" class="card-img" loading="lazy">
-          <div class="card-overlay"></div>
-          <span class="card-badge">Pele</span>
-        </div>
-        <div class="card-body">
-          <div class="card-cat">Bioestimuladores</div>
-          <h3 class="card-title">Pele glow sem filtro — é possível</h3>
-          <p class="card-excerpt">Nanofat, PDRN e Plasma Rico em Fibrinogênio com microagulhamento: o protocolo que transforma a qualidade da pele de dentro para fora.</p>
-          <span class="card-leia">Ler artigo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <div class="card-title">Mamoplastia em Curitiba: aumento, redução e levantamento</div>
+          <div class="card-excerpt">Conheça as técnicas e saiba qual procedimento é indicado para o seu caso.</div>
+          <span class="card-leia">Saiba mais</span>
         </div>
       </a>
 
       <a href="/blog/lipoaspiracao-no-batel/" class="card" data-cat="lipoaspiracao curitiba">
-        <div class="card-img-wrap">
-          <img src="/img/blog/b-bairros.jpg" alt="" class="card-img" loading="lazy">
-          <div class="card-overlay"></div>
-          <span class="card-badge">Curitiba</span>
-        </div>
+        <img class="card-img" src="/img/blog/b-lipo-destaque.jpg" alt="Lipoaspiração em Curitiba" style="object-fit:cover;width:100%;aspect-ratio:16/9">
         <div class="card-body">
-          <div class="card-cat">Curitiba</div>
-          <h3 class="card-title">Lipoaspiração no Batel e Água Verde, Curitiba</h3>
-          <p class="card-excerpt">Tudo sobre o procedimento para pacientes da região central de Curitiba.</p>
-          <span class="card-leia">Ler artigo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <div class="card-cat">Lipoaspiração · Curitiba</div>
+          <div class="card-title">Lipoaspiração no Batel e Água Verde, Curitiba</div>
+          <div class="card-excerpt">Encontre uma cirurgiã plástica especializada na sua região em Curitiba.</div>
+          <span class="card-leia">Saiba mais</span>
+        </div>
+      </a>
+
+      <a href="/blog/cirurgia-plastica-em-curitiba/" class="card" data-cat="curitiba">
+        <img class="card-img" src="/img/blog/b-como-escolher.jpg" alt="Como escolher" style="object-fit:cover;width:100%;aspect-ratio:16/9">
+        <div class="card-body">
+          <div class="card-cat">Guia prático</div>
+          <div class="card-title">Como escolher uma cirurgiã plástica em Curitiba</div>
+          <div class="card-excerpt">7 perguntas essenciais para fazer antes de escolher sua especialista.</div>
+          <span class="card-leia">Saiba mais</span>
+        </div>
+      </a>
+
+      <a href="/blog/abdominoplastia-pos-bariatrica-ou-lipo/" class="card" data-cat="abdominoplastia comparacao">
+        <img class="card-img" src="/img/blog/b-bariatrica.jpg" alt="Bariátrica" style="object-fit:cover;width:100%;aspect-ratio:16/9">
+        <div class="card-body">
+          <div class="card-cat">Comparação</div>
+          <div class="card-title">Lipo ou abdominoplastia após a bariátrica?</div>
+          <div class="card-excerpt">Saiba qual procedimento é mais indicado após grande perda de peso.</div>
+          <span class="card-leia">Saiba mais</span>
+        </div>
+      </a>
+
+      <a href="/blog/recuperacao-da-mamoplastia/" class="card" data-cat="mamoplastia recuperacao">
+        <img class="card-img" src="/img/blog/b-recuperacao-mama.jpg" alt="Recuperação mama" style="object-fit:cover;width:100%;aspect-ratio:16/9">
+        <div class="card-body">
+          <div class="card-cat">Recuperação</div>
+          <div class="card-title">Recuperação da mamoplastia: o que esperar</div>
+          <div class="card-excerpt">Cuidados essenciais no pós-operatório para garantir o melhor resultado.</div>
+          <span class="card-leia">Saiba mais</span>
+        </div>
+      </a>
+
+      <a href="/blog/rinoplastia-cirurgica-ou-nao-cirurgica/" class="card" data-cat="rinoplastia comparacao">
+        <img class="card-img" src="/img/blog/b-rino-comparacao.jpg" alt="Rinoplastia comparação" style="object-fit:cover;width:100%;aspect-ratio:16/9">
+        <div class="card-body">
+          <div class="card-cat">Comparação</div>
+          <div class="card-title">Rinoplastia cirúrgica ou não cirúrgica: qual escolher?</div>
+          <div class="card-excerpt">Entenda as diferenças, indicações e resultados de cada técnica.</div>
+          <span class="card-leia">Saiba mais</span>
         </div>
       </a>
 
     </div>
 
-    <!-- CTA -->
     <div class="cta-banner">
-      <div class="cta-banner-text">
-        <h2>Ainda tem dúvidas? A Dra. Rebeca<br>responde <em>pessoalmente</em></h2>
-        <p>Avaliação gratuita pelo quiz — descubra qual procedimento é ideal para o seu perfil</p>
-      </div>
-      <div class="cta-banner-btns">
-        <a href="/#avaliacao" class="btn-cta-p">
-          <span>Avaliação gratuita</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="https://wa.me/5541984001601?text=Vim+pelo+blog+e+quero+tirar+uma+dúvida." target="_blank" class="btn-cta-s">Falar no WhatsApp</a>
-      </div>
+      <h2>Ainda tem dúvidas? A Dra. Rebeca<br><em>responde</em> pessoalmente</h2>
+      <p>Faça a avaliação gratuita e descubra qual procedimento é ideal para o seu perfil</p>
+      <a href="/#avaliacao" class="cta-btn">Iniciar avaliação gratuita →</a>
     </div>
 
-  </div>
-</section>
+  </section>
+</div>
 
 <footer>
-  <div class="container">
-    <p>© 2025 Dra. Rebeca Koteski · Cirurgia Plástica · CRM PR 40326 · RQE 34726<br>
-    <a href="/">koteski.com.br</a> · Curitiba, Paraná ·
-    <a href="https://wa.me/5541984001601">WhatsApp</a> ·
-    <a href="https://instagram.com/rkoteski.cirurgiaplastica">Instagram</a></p>
-  </div>
+  <p>© 2025 Dra. Rebeca Koteski · Cirurgia Plástica · CRM PR 40326 · RQE 34726 ·
+  <a href="/">koteski.com.br</a> ·
+  <a href="https://wa.me/5541984001601">WhatsApp</a></p>
 </footer>
 
 <script>
-// Nav slim on scroll
-const nav = document.getElementById('nav');
-const filtersBar = document.getElementById('filtersBar');
-window.addEventListener('scroll',()=>{
-  nav.classList.toggle('slim', window.scrollY > 50);
-},{ passive:true });
-
-// Contador dinâmico
-(function(){
-  var B=208, D=new Date('2026-03-28T00:00:00Z'), P=3;
-  var d=Math.floor((new Date()-D)/86400000);
-  var t=B+Math.max(0,Math.floor(d/P));
-  var el=document.getElementById('statProc');
-  if(el) el.textContent=t;
-})();
-
-// Scroll reveal com stagger
-const obs = new IntersectionObserver((entries)=>{
-  entries.forEach((e,i)=>{
-    if(e.isIntersecting){
-      setTimeout(()=>e.target.classList.add('visible'), i*70);
-      obs.unobserve(e.target);
+function filtrar(cat){
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});
+  event.target.classList.add('active');
+  document.querySelectorAll('.card[data-cat],.destaque[data-cat]').forEach(function(c){
+    if(cat==='todos'||c.dataset.cat.includes(cat)){
+      c.classList.remove('hidden');
+    } else {
+      c.classList.add('hidden');
     }
   });
-},{threshold:.08, rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.card').forEach(c=>obs.observe(c));
-
-// Filtros — calcula contagens no load
-function calcCounts(){
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    const cat = btn.getAttribute('onclick').match(/filtrar\('([^']+)'/)?.[1];
-    if (!cat) return;
-    let n = 0;
-    document.querySelectorAll('.card[data-cat],.destaque[data-cat]').forEach(c => {
-      if (cat === 'todos' || c.dataset.cat.includes(cat)) n++;
-    });
-    let cnt = btn.querySelector('.filter-count');
-    if (!cnt) {
-      cnt = document.createElement('span');
-      cnt.className = 'filter-count';
-      btn.appendChild(cnt);
-    }
-    cnt.textContent = n;
-  });
-}
-document.addEventListener('DOMContentLoaded', calcCounts);
-
-function filtrar(cat, btn){
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  let n=0;
-  document.querySelectorAll('.card[data-cat],.destaque[data-cat]').forEach(c=>{
-    const show = cat==='todos' || c.dataset.cat.includes(cat);
-    c.classList.toggle('hidden',!show);
-    if(show) n++;
-  });
-  const cnt = btn.querySelector('.filter-count');
-  if(cnt) cnt.textContent = n;
 }
 </script>
 </body>

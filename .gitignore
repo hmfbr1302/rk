@@ -1,0 +1,15 @@
+# Fotos cruas (não fazem parte do site)
+*.heic
+*.HEIC
+IMG_*.jpg
+IMG_*.jpeg
+IMG_*.JPG
+DRA._*.jpeg
+R_KOTESKI-*.jpeg
+*-IMG_*.jpg
+020786.jpg
+231943.jpg
+836979.jpeg
+3D9F254C-*.jpeg
+img_blog_koteski/
+img_blog_koteski.zip
