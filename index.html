@@ -26,7 +26,11 @@
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Physician","name":"Dra. Rebeca Koteski","medicalSpecialty":"Cirurgia Plástica","address":{"@type":"PostalAddress","addressLocality":"Curitiba","addressRegion":"PR","addressCountry":"BR"},"telephone":"+55-41-98400-1601","url":"https://rkoteskicirurgiaplastica.com.br","sameAs":["https://www.instagram.com/rkoteski.cirurgiaplastica"]}</script>
 
-<!-- Meta Pixel — substitua PIXEL_ID_AQUI -->
+<!-- Google Analytics 4 — substitua G-XXXXXXXXXX pelo Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+
+<!-- Meta Pixel — substitua PIXEL_ID_AQUI pelo ID do pixel -->
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');var PIXEL_ID='PIXEL_ID_AQUI';fbq('init',PIXEL_ID);fbq('track','PageView');</script>
 
 <style>
@@ -935,6 +939,29 @@ footer{background:var(--v3);padding:3rem 0 2rem}
 <script>
 var SHEETS_URL='SHEETS_WEBHOOK_AQUI';
 
+/* ── UTM TRACKING — captura origem do tráfego (Instagram, ads, etc) ── */
+var UTM = (function(){
+  var p = new URLSearchParams(window.location.search);
+  var u = {
+    source:   p.get('utm_source')   || '',
+    medium:   p.get('utm_medium')   || '',
+    campaign: p.get('utm_campaign') || '',
+    content:  p.get('utm_content')  || '',
+  };
+  // Salva no sessionStorage para não perder ao navegar
+  if (u.source) sessionStorage.setItem('rk_utm', JSON.stringify(u));
+  else try { var s = sessionStorage.getItem('rk_utm'); if (s) return JSON.parse(s); } catch(e){}
+  // Detecta referrer quando não tem UTM
+  if (!u.source && document.referrer) {
+    var ref = document.referrer;
+    if (ref.indexOf('instagram.com') > -1) { u.source = 'instagram'; u.medium = 'social'; }
+    else if (ref.indexOf('facebook.com') > -1) { u.source = 'facebook'; u.medium = 'social'; }
+    else if (ref.indexOf('google.com') > -1) { u.source = 'google'; u.medium = 'organic'; }
+    if (u.source) sessionStorage.setItem('rk_utm', JSON.stringify(u));
+  }
+  return u;
+})();
+
 /* ── CONTADOR DINÂMICO DE PROCEDIMENTOS ─────────────────── */
 (function(){
   // Data de referência: 108 procedimentos em 27/03/2026
@@ -1129,6 +1156,7 @@ function show(id){
 
 function startQuiz(){
   if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'quiz_start'});
+  if(typeof gtag!=='undefined')gtag('event','begin_checkout',{items:[{item_name:'quiz_start'}]});
   idx=0;ans=[];
   if(preSelectedArea){ans[0]=preSelectedArea;idx=1;}
   show('s-quiz');renderQ(idx);
@@ -1185,6 +1213,8 @@ function submitCap(){
   if(!validTel(tel)){document.getElementById('etel').classList.add('on');document.getElementById('ftel').classList.add('err');ok=false;}
   if(!ok)return;
   uData={nome:nome,tel:tel.replace(/\D/g,'')};
+  if(typeof fbq!=='undefined')fbq('track','InitiateCheckout',{content_name:'quiz_capture'});
+  if(typeof gtag!=='undefined')gtag('event','add_payment_info',{event_label:'quiz_capture'});
   document.getElementById('btnenv').disabled=true;
   document.getElementById('btnenv').textContent='Enviando...';
   startLoad();
@@ -1247,9 +1277,10 @@ function buildResult(){
     '<a href="https://wa.me/'+WA+'?text='+msgP+'" target="_blank" rel="noopener" class="btn btn-p" onclick="trackWA(\'presencial\')">'+(isLocal?'Agendar avaliação presencial em Curitiba →':'Agendar minha avaliação →')+'</a>';
 
   if(SHEETS_URL&&SHEETS_URL!=='SHEETS_WEBHOOK_AQUI'){
-    fetch(SHEETS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({nome:uData.nome,tel:uData.tel,area:area,tempo:ans[1],bloq:ans[2],perf:ans[3],local:local,perfil:prof.nome,procedimento:proc.nome.replace(/&nbsp;/g,' '),ancora:proc.ancora.replace(/&nbsp;/g,' '),score:score,sensivel_preco:isSensivel})}).catch(function(){});
+    fetch(SHEETS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({nome:uData.nome,tel:uData.tel,area:area,tempo:ans[1],bloq:ans[2],perf:ans[3],local:local,perfil:prof.nome,procedimento:proc.nome.replace(/&nbsp;/g,' '),ancora:proc.ancora.replace(/&nbsp;/g,' '),score:score,sensivel_preco:isSensivel,utm_source:UTM.source,utm_medium:UTM.medium,utm_campaign:UTM.campaign})}).catch(function(){});
   }
   if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:proc.nome.replace(/&nbsp;/g,' '),content_category:area,value:parseFloat(proc.ancora.replace(/\D/g,''))||0,currency:'BRL'});
+  if(typeof gtag!=='undefined')gtag('event','generate_lead',{event_category:'quiz',event_label:proc.nome.replace(/&nbsp;/g,' '),value:parseFloat(proc.ancora.replace(/\D/g,''))||0,currency:'BRL'});
 
   document.getElementById('s-res').innerHTML=
     '<div class="res-hero">'+
@@ -1290,7 +1321,10 @@ function buildResult(){
   show('s-res');
 }
 
-function trackWA(tipo){if(typeof fbq!=='undefined')fbq('track','Contact',{content_name:'whatsapp_'+tipo});}
+function trackWA(tipo){
+  if(typeof fbq!=='undefined')fbq('track','Contact',{content_name:'whatsapp_'+tipo});
+  if(typeof gtag!=='undefined')gtag('event','contact',{method:'whatsapp',event_label:tipo});
+}
 </script>
 </body>
 </html>
