@@ -1399,6 +1399,7 @@ function buildResult(){
   var msgO=encodeURIComponent('Olá! Sou '+uData.nome+'. Fiz a avaliação no site e gostaria de agendar uma consulta online por R$ 100.');
   var msgPreco=encodeURIComponent('Olá! Sou '+uData.nome+'. Fiz a avaliação no site e queria entender melhor as opções de pagamento para '+proc.nome.replace(/&nbsp;/g,' ')+'. Pode me ajudar?');
   var mes=new Date().toLocaleString('pt-BR',{month:'long'});
+  var proxMes=new Date(new Date().getFullYear(),new Date().getMonth()+1).toLocaleString('pt-BR',{month:'long'});
 
   var blocoPreco=isSensivel?
     '<div class="ancora" style="background:linear-gradient(135deg,#1A3A1A,#2D4A2D)">'+
@@ -1488,7 +1489,7 @@ function buildResult(){
         '<div class="ct-pnote">ou presencial em Curitiba · CRM PR 40326</div>'+
       '</div>'+
     '</div>'+
-    '<div class="urgency"><div class="urg-dot"></div><div class="urg-txt">Agenda de '+mes+' com vagas limitadas. A Dra. Rebeca limita o número de avaliações mensais.</div></div>'+
+    '<div class="urgency"><div class="urg-dot"></div><div class="urg-txt">Agenda de '+mes+' e '+proxMes+' com vagas limitadas. A Dra. Rebeca limita o número de pré-avaliações mensais.</div></div>'+
     '<div class="cta-stack">'+ctaP+
       '<a href="https://wa.me/'+WA+'?text='+msgO+'" target="_blank" rel="noopener" class="btn btn-s" onclick="trackWA(\'online\')">Consulta online · R$&nbsp;100</a>'+
     '</div>'+
