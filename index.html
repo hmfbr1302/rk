@@ -962,6 +962,39 @@ var UTM = (function(){
   return u;
 })();
 
+/* ── INSTAGRAM DEEP LINK — cai direto no quiz ──────────── */
+/* Links: koteski.com.br/quiz ou koteski.com.br?ref=ig      */
+/* Scroll instantâneo + auto-inicia o quiz no mobile        */
+(function(){
+  var isDeepLink = window.location.hash === '#avaliacao'
+    || window.location.pathname === '/quiz'
+    || new URLSearchParams(window.location.search).get('ref') === 'ig'
+    || UTM.source === 'instagram';
+  if (!isDeepLink) return;
+
+  // Espera DOM carregar, scroll pro quiz e auto-inicia
+  window.addEventListener('DOMContentLoaded', function(){
+    // Remove animações de reveal no quiz pra não ter delay
+    var quizEls = document.querySelectorAll('.quiz-section .reveal, .quiz-section .reveal-d1');
+    quizEls.forEach(function(el){ el.classList.add('revealed'); });
+
+    // Scroll instantâneo pro quiz (sem smooth — zero fricção)
+    var quiz = document.getElementById('avaliacao');
+    if (quiz) {
+      setTimeout(function(){
+        quiz.scrollIntoView({ behavior: 'instant', block: 'start' });
+        // Offset pra nav fixa
+        window.scrollBy(0, -60);
+      }, 100);
+    }
+
+    // Auto-inicia o quiz após 600ms (tempo de perceber onde está)
+    setTimeout(function(){
+      if (typeof startQuiz === 'function') startQuiz();
+    }, 600);
+  });
+})();
+
 /* ── CONTADOR DINÂMICO DE PROCEDIMENTOS ─────────────────── */
 (function(){
   // Data de referência: 208 procedimentos em 28/04/2026
