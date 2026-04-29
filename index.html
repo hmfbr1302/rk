@@ -873,7 +873,7 @@ footer{background:var(--v3);padding:3rem 0 2rem}
               </svg>
             </div>
             <div class="cap-tit">Seu diagnóstico está pronto</div>
-            <p class="cap-sub">Informe seu nome e WhatsApp para receber o resultado com <strong>estimativa de investimento personalizada</strong>.</p>
+            <p class="cap-sub">Informe seu nome e WhatsApp para ver o resultado com <strong>estimativa de investimento personalizada</strong>.</p>
           </div>
           <div class="fld">
             <label class="flbl" for="fnome">Seu nome</label>
@@ -885,10 +885,10 @@ footer{background:var(--v3);padding:3rem 0 2rem}
             <input class="finput" id="ftel" type="tel" placeholder="(41) 99999-9999" maxlength="15" inputmode="numeric">
             <div class="ferr" id="etel">Número inválido. Verifique o DDD e os 9 dígitos.</div>
           </div>
-          <button class="btn btn-p" id="btnenv" onclick="submitCap()">Enviar meu resultado →</button>
+          <button class="btn btn-p" id="btnenv" onclick="submitCap()">Ver meu diagnóstico →</button>
           <div class="trust-note">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9A8080" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-            <p>Seus dados são usados exclusivamente para envio do diagnóstico. Não compartilhamos com terceiros.</p>
+            <p>Seus dados são usados exclusivamente para contato sobre o diagnóstico. Não compartilhamos com terceiros.</p>
           </div>
         </div>
 
@@ -1411,7 +1411,24 @@ document.getElementById('ftel').addEventListener('input',function(){
   this.value=f;
 });
 
-function validTel(v){return v.replace(/\D/g,'').length===11;}
+function validTel(v){
+  var d=v.replace(/\D/g,'');
+  if(d.length!==11)return{ok:false,msg:'Numero precisa ter DDD + 9 digitos.'};
+  var ddd=parseInt(d.substr(0,2));
+  if(ddd<11||ddd>99)return{ok:false,msg:'DDD invalido. Confira o codigo da sua cidade.'};
+  if(d.charAt(2)!=='9')return{ok:false,msg:'Numero de celular deve comecar com 9 apos o DDD.'};
+  if(/^(\d)\1+$/.test(d))return{ok:false,msg:'Numero invalido. Digite seu numero real.'};
+  return{ok:true};
+}
+
+function validNome(n){
+  if(!n||n.length<3)return{ok:false,msg:'Por favor, informe seu nome (minimo 3 letras).'};
+  if(/\d/.test(n))return{ok:false,msg:'Nome nao pode conter numeros.'};
+  if(/^(.)\1+$/i.test(n.replace(/\s/g,'')))return{ok:false,msg:'Por favor, informe seu nome real.'};
+  var fakes=['teste','test','aaa','xxx','asdf','qwer','abc','zzz','nao','nada','ninguem'];
+  if(fakes.indexOf(n.toLowerCase())>-1)return{ok:false,msg:'Por favor, informe seu nome real.'};
+  return{ok:true};
+}
 
 function submitCap(){
   var nome=document.getElementById('fnome').value.trim();
@@ -1419,8 +1436,10 @@ function submitCap(){
   var ok=true;
   ['enome','etel'].forEach(function(id){document.getElementById(id).classList.remove('on');});
   ['fnome','ftel'].forEach(function(id){document.getElementById(id).classList.remove('err');});
-  if(!nome||nome.length<2){document.getElementById('enome').classList.add('on');document.getElementById('fnome').classList.add('err');ok=false;}
-  if(!validTel(tel)){document.getElementById('etel').classList.add('on');document.getElementById('ftel').classList.add('err');ok=false;}
+  var vn=validNome(nome);
+  if(!vn.ok){document.getElementById('enome').textContent=vn.msg;document.getElementById('enome').classList.add('on');document.getElementById('fnome').classList.add('err');ok=false;}
+  var vt=validTel(tel);
+  if(!vt.ok){document.getElementById('etel').textContent=vt.msg;document.getElementById('etel').classList.add('on');document.getElementById('ftel').classList.add('err');ok=false;}
   if(!ok)return;
   uData={nome:nome,tel:tel.replace(/\D/g,'')};
   if(typeof fbq!=='undefined')fbq('track','InitiateCheckout',{content_name:'quiz_capture'});
