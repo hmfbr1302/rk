@@ -992,7 +992,7 @@ footer{background:var(--v3);padding:3rem 0 2rem}
           <span class="faq-q-text">Posso fazer a consulta online?</span>
           <div class="faq-q-icon"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
         </div>
-        <div class="faq-a"><p class="faq-a-text">Sim. A Dra. Rebeca oferece consulta online por R$ 100 para pacientes de qualquer lugar do Brasil. Você recebe uma avaliação completa, plano cirúrgico e estimativa de investimento, tudo por videochamada.</p></div>
+        <div class="faq-a"><p class="faq-a-text">Sim. A Dra. Rebeca oferece consulta online por R$ <span id="faq-consulta-val">170</span> para pacientes de qualquer lugar do Brasil. Você recebe uma avaliação completa, plano cirúrgico e estimativa de investimento, tudo por videochamada.</p></div>
       </div>
       <div class="faq-item reveal reveal-d3">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
@@ -1107,6 +1107,9 @@ footer{background:var(--v3);padding:3rem 0 2rem}
 <script>
 var SHEETS_URL='https://script.google.com/macros/s/AKfycbyQ7G1SQu9by8r7rRKOW7QYOKyPKrhBr9gIdSNOsV1k7aYlTO61N2ukAv0vwRqrVa9Fkw/exec';
 
+/* ── VALOR DA CONSULTA ONLINE — altere só aqui ─────────── */
+var CONSULTA_ONLINE = 170;
+
 /* ── UTM TRACKING — captura origem do tráfego (Instagram, ads, etc) ── */
 var UTM = (function(){
   var p = new URLSearchParams(window.location.search);
@@ -1187,6 +1190,10 @@ var UTM = (function(){
   document.querySelectorAll('.sobre-body').forEach(function(p){
     p.innerHTML = p.innerHTML.replace(/\b208\b/g, total);
   });
+
+  // Atualizar valor da consulta online no FAQ
+  var faqVal = document.getElementById('faq-consulta-val');
+  if(faqVal) faqVal.textContent = CONSULTA_ONLINE;
 
   // Atualizar og:image não é possível via JS, mas o número no site fica correto
 })();
@@ -1447,7 +1454,7 @@ function buildResult(){
   var isSensivel=ans[2]==='preco';
   var WA='5541984001601';
   var msgP=encodeURIComponent('Olá! Sou '+uData.nome+' e acabei de fazer a avaliação no site. Meu diagnóstico foi "'+prof.nome+'" e meu interesse é em '+proc.nome.replace(/&nbsp;/g,' ')+'. Gostaria de agendar uma avaliação com a Dra. Rebeca.');
-  var msgO=encodeURIComponent('Olá! Sou '+uData.nome+'. Fiz a avaliação no site e gostaria de agendar uma consulta online por R$ 100.');
+  var msgO=encodeURIComponent('Olá! Sou '+uData.nome+'. Fiz a avaliação no site e gostaria de agendar uma consulta online por R$ '+CONSULTA_ONLINE+'.');
   var msgPreco=encodeURIComponent('Olá! Sou '+uData.nome+'. Fiz a avaliação no site e queria entender melhor as opções de pagamento para '+proc.nome.replace(/&nbsp;/g,' ')+'. Pode me ajudar?');
   var mes=new Date().toLocaleString('pt-BR',{month:'long'});
   var proxMes=new Date(new Date().getFullYear(),new Date().getMonth()+1).toLocaleString('pt-BR',{month:'long'});
@@ -1536,13 +1543,13 @@ function buildResult(){
         '<li>Relatório escrito com plano completo para levar</li>'+
       '</ul>'+
       '<div class="ct-price">'+
-        '<div class="ct-pval">R$&nbsp;100 <span style="font-size:14px;font-weight:300;color:#9A8080;font-family:DM Sans,sans-serif">· consulta online</span></div>'+
+        '<div class="ct-pval">R$&nbsp;'+CONSULTA_ONLINE+' <span style="font-size:14px;font-weight:300;color:#9A8080;font-family:DM Sans,sans-serif">· consulta online</span></div>'+
         '<div class="ct-pnote">ou presencial em Curitiba · CRM PR 40326</div>'+
       '</div>'+
     '</div>'+
     '<div class="urgency"><div class="urg-dot"></div><div class="urg-txt">Agenda de '+mes+' e '+proxMes+' com vagas limitadas. A Dra. Rebeca limita o número de pré-avaliações mensais.</div></div>'+
     '<div class="cta-stack">'+ctaP+
-      '<a href="https://wa.me/'+WA+'?text='+msgO+'" target="_blank" rel="noopener" class="btn btn-s" onclick="trackWA(\'online\')">Consulta online · R$&nbsp;100</a>'+
+      '<a href="https://wa.me/'+WA+'?text='+msgO+'" target="_blank" rel="noopener" class="btn btn-s" onclick="trackWA(\'online\')">Consulta online · R$&nbsp;'+CONSULTA_ONLINE+'</a>'+
     '</div>'+
     '<p class="disc">Dra. Rebeca Koteski · CRM PR 40326 · RQE 34726 · @rkoteski.cirurgiaplastica<br>Estimativas baseadas em tabelas de referência de mercado. Investimento real definido em avaliação clínica.</p>';
 
