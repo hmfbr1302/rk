@@ -701,7 +701,7 @@ footer{background:var(--v3);padding:3rem 0 2rem}
         <div class="stat-gold-line"></div>
       </div>
       <div class="stat-item reveal reveal-d1">
-        <div class="stat-number"><span>8</span><sup>&nbsp;anos</sup></div>
+        <div class="stat-number"><span id="stat-anos">9</span><sup>&nbsp;anos</sup></div>
         <div class="stat-label">De experiência</div>
         <div class="stat-gold-line"></div>
       </div>
@@ -1196,6 +1196,13 @@ var UTM = (function(){
   if(faqVal) faqVal.textContent = CONSULTA_ONLINE;
 
   // Atualizar og:image não é possível via JS, mas o número no site fica correto
+
+  // ── ANOS DE EXPERIÊNCIA DINÂMICO ──
+  // Rebeca tem 9 anos em abril/2026. Início da carreira: ~2017
+  var CARREIRA_INICIO = 2017;
+  var anosExp = new Date().getFullYear() - CARREIRA_INICIO;
+  var elAnos = document.getElementById('stat-anos');
+  if(elAnos) elAnos.textContent = anosExp;
 })();
 var ro=new IntersectionObserver(function(entries){
   entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');ro.unobserve(e.target);}});
@@ -1263,9 +1270,10 @@ window.addEventListener('scroll',function(){
 
 /* ── MELHORIA 4: COUNTER ANIMATION ─────────────────────── */
 (function(){
+  var anosAnimTarget=new Date().getFullYear()-2017;
   var STATS=[
     {el:null,target:208,suffix:'',decimal:false,prefix:'+'},
-    {el:null,target:8,suffix:' anos',decimal:false,prefix:''},
+    {el:null,target:anosAnimTarget,suffix:' anos',decimal:false,prefix:''},
     {el:null,target:98,suffix:'%',decimal:false,prefix:''},
     {el:null,target:2,suffix:'M',decimal:false,prefix:'+'}
   ];
