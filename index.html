@@ -867,7 +867,7 @@ footer{background:var(--v3);padding:3rem 0 2rem}
         <div class="sc on" id="s-intro">
           <div class="quiz-pill">2 minutos · resultado no WhatsApp</div>
           <h3 class="qtitle">Descubra qual procedimento é <em>feito para o seu corpo</em></h3>
-          <p class="qsub">Responda 5 perguntas e receba um diagnóstico personalizado com a estimativa de investimento real para o seu caso.</p>
+          <p class="qsub">Responda 4 perguntas e receba um diagnóstico personalizado com a estimativa de investimento real para o seu caso.</p>
           <ul class="qbenefits">
             <li>Procedimento cirúrgico indicado para o seu perfil</li>
             <li>Estimativa de investimento com valores reais de mercado</li>
@@ -1073,7 +1073,7 @@ footer{background:var(--v3);padding:3rem 0 2rem}
           <span class="faq-q-text">Como sei se sou candidata à cirurgia?</span>
           <div class="faq-q-icon"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
         </div>
-        <div class="faq-a"><p class="faq-a-text">A melhor forma de descobrir é fazendo a pré-avaliação gratuita aqui no site. Em 2 minutos você responde 5 perguntas e recebe um diagnóstico personalizado com o procedimento mais indicado para o seu perfil e a estimativa de investimento.</p></div>
+        <div class="faq-a"><p class="faq-a-text">A melhor forma de descobrir é fazendo a pré-avaliação gratuita aqui no site. Em 2 minutos você responde 4 perguntas e recebe um diagnóstico personalizado com o procedimento mais indicado para o seu perfil e a estimativa de investimento.</p></div>
       </div>
     </div>
   </div>
@@ -1382,7 +1382,8 @@ window.addEventListener('scroll',function(){
   if(items[0])counterObs.observe(items[0]);
 })();
 
-/* ── QUIZ DATA V8 ─────────────────────────────────────────── */
+/* ── QUIZ DATA V8 ENXUTO — 6 telas ────────────────────────── */
+/* ans[0]=area, ans[1]=procedimento, ans[2]=capture(skip), ans[3]=urgencia, ans[4]=bloqueio, ans[5]=localizacao */
 var QUESTIONS=[
   {id:'area',cat:"Area de interesse",tit:"Qual regiao voce mais deseja transformar?",opts:[
     {t:"Corpo",s:"Barriga, flancos, coxas, bracos",v:"corpo"},
@@ -1399,13 +1400,6 @@ var QUESTIONS=[
     {t:"Proximo ano ou depois",s:"Estou planejando com antecedencia",v:"proximoano"},
     {t:"So pesquisando",s:"Quero entender antes de decidir",v:"pesquisando"}
   ]},
-  {id:'ja_investiu',cat:"Historico estetico",tit:"Voce ja investiu em estetica antes?",opts:[
-    {t:"Ja fiz cirurgia plastica",s:"Conheco o processo",v:"cirurgia"},
-    {t:"Ja fiz procedimentos nao-cirurgicos",s:"Botox, preenchimento, harmonizacao",v:"naocirurgico"},
-    {t:"Estou pensando, mas nunca fiz",s:"Sera meu primeiro procedimento",v:"pensando"},
-    {t:"Nunca foi prioridade pra mim",s:"Estou so conhecendo o universo",v:"nunca"}
-  ]},
-  {id:'contexto',cat:"Contexto pessoal",tit:"",dynamic:true},
   {id:'bloq',cat:"Principal bloqueio",tit:"O que mais te impede de agendar uma avaliacao?",opts:[
     {t:"Quero entender se consigo pagar",s:"Preciso saber o valor real",v:"preco"},
     {t:"Ainda preciso de mais informacoes",s:"Quero entender melhor o procedimento",v:"info"},
@@ -1450,34 +1444,7 @@ var PROC_OPCOES={
   ]
 };
 
-var CONTEXTO_OPCOES={
-  mae:{
-    tit:"Sua historia com gestacao:",
-    opts:[
-      {t:"Tenho 1 filho e amamentei",s:"Corpo mudou apos gestacao",v:"mae_amamentou_um"},
-      {t:"Tenho mais de um filho e amamentei",s:"Varias gestacoes",v:"mae_amamentou_mais"},
-      {t:"Tenho filho mas nao amamentei",s:"Gestacao sem amamentacao",v:"mae_nao_amamentou"},
-      {t:"Nao tenho filhos",s:"Outras motivacoes",v:"sem_filhos"},
-      {t:"Estou planejando ter",s:"Talvez seja melhor esperar",v:"planejando"}
-    ]
-  },
-  blefaro:{
-    tit:"O que mais te incomoda hoje?",
-    opts:[
-      {t:"Pessoas dizem que pareco cansada",s:"Olhar abatido o tempo todo",v:"cansada"},
-      {t:"Tenho dificuldade visual",s:"A palpebra atrapalha o campo de visao",v:"funcional"},
-      {t:"Os dois motivos",s:"Estetico e funcional",v:"ambos"}
-    ]
-  },
-  rosto:{
-    tit:"Sua principal motivacao:",
-    opts:[
-      {t:"Estetica pura",s:"Quero me sentir melhor com o que vejo",v:"estetica"},
-      {t:"Funcional + estetico",s:"Tem questao pratica junto",v:"ambos"},
-      {t:"Apos acidente ou trauma",s:"Reconstrutivo",v:"reconstrutivo"}
-    ]
-  }
-};
+/* CONTEXTO removido como tela isolada — qualificacao extra fica pro follow-up da Raquel */
 
 var PROCS={
   corpo:{nome:"Lipoaspiracao / Lipo HD",desc:"Remocao precisa de gordura localizada com escultura do contorno corporal.",ancora:"R$&nbsp;38.000",faixa:"R$ 18.000 a R$ 45.000",parcela:"~R$&nbsp;750/mes",entradaMin:"R$&nbsp;18.000"},
@@ -1567,17 +1534,6 @@ function renderQ(i){
     var area=ans[0]||'corpo';
     resolvedOpts=PROC_OPCOES[area]||PROC_OPCOES.corpo;
     resolvedTit="Qual procedimento te interessa?";
-  }
-  if(q.dynamic && q.id==='contexto'){
-    var area=ans[0]||'corpo';
-    var proc=ans[1]||'';
-    var ctxKey;
-    if(proc==='blefaro')ctxKey='blefaro';
-    else if(area==='rosto')ctxKey='rosto';
-    else ctxKey='mae';
-    var ctxConfig=CONTEXTO_OPCOES[ctxKey];
-    resolvedOpts=ctxConfig.opts;
-    resolvedTit=ctxConfig.tit;
   }
 
   /* Count real questions (exclude skip) */
@@ -1750,37 +1706,30 @@ function showReinforcement(){
   setTimeout(function(){buildResult();},1800);
 }
 
+/* ans[0]=area, [1]=procedimento, [2]=capture(skip), [3]=urgencia, [4]=bloqueio, [5]=local */
 function calcScoreV8(){
   var s=0;
-  var bloq=ans[6],urg=ans[3],invest=ans[4],ctx=ans[5],local=ans[7],proc=ans[1],area=ans[0];
+  var bloq=ans[4],urg=ans[3],local=ans[5],proc=ans[1],area=ans[0];
 
-  s+=({pronta:25,medo:15,info:10,preco:5}[bloq]||0);
-  s+=({imediato:30,medio:22,esteano:12,proximoano:5,pesquisando:0}[urg]||0);
-  s+=({cirurgia:20,naocirurgico:15,pensando:5,nunca:0}[invest]||0);
-
-  if((area==='seios')&&(ctx==='mae_amamentou_um'||ctx==='mae_amamentou_mais'))s+=15;
-  else if((area==='corpo')&&(ctx==='mae_amamentou_um'||ctx==='mae_amamentou_mais'||ctx==='mae_nao_amamentou'))s+=12;
-  else if(proc==='blefaro'&&(ctx==='funcional'||ctx==='ambos'))s+=15;
-  else if(proc==='blefaro'&&ctx==='cansada')s+=10;
-  else if(ctx)s+=5;
-
-  if(proc&&proc!=='naosei')s+=5;
-  s+=({cwb:5,metro:5,pr:4,outro:3}[local]||0);
+  s+=({pronta:30,medo:18,info:12,preco:5}[bloq]||0);
+  s+=({imediato:35,medio:25,esteano:15,proximoano:5,pesquisando:0}[urg]||0);
+  if(proc&&proc!=='naosei')s+=10;
+  s+=({cwb:10,metro:8,pr:5,outro:3}[local]||0);
   if(proc==='blefaro')s+=5;
-  if(bloq==='preco')s-=15;
+  if(bloq==='preco')s-=10;
 
   return Math.max(0,Math.min(100,s));
 }
 
 function buildResult(){
-  var area=ans[0]||'corpo',local=ans[7],score=calcScoreV8();
+  var area=ans[0]||'corpo',local=ans[5],score=calcScoreV8();
   var proc=PROCS[area];
   var procEspecifico=ans[1]||'';
   var procNome=PROC_NOMES[procEspecifico]||proc.nome;
   var prof=PROFILES.filter(function(p){return score>=p.min;})[0];
   var fn=uData.nome?uData.nome.split(' ')[0]:'';
   var isLocal=['cwb','metro'].indexOf(local)>-1;
-  var isSensivel=ans[6]==='preco';
+  var isSensivel=ans[4]==='preco';
   var WA='5541984001601';
   var mes=new Date().toLocaleString('pt-BR',{month:'long'});
   var proxMes=new Date(new Date().getFullYear(),new Date().getMonth()+1).toLocaleString('pt-BR',{month:'long'});
@@ -1832,8 +1781,8 @@ function buildResult(){
     var payload=JSON.stringify({
       nome:uData.nome,tel:uData.tel,tel_wa:'55'+uData.tel,
       area:area,procedimento:procNome,procedimento_key:procEspecifico,
-      urgencia:ans[3],ja_investiu:ans[4],contexto:ans[5],
-      bloq:ans[6],local:ans[7],
+      urgencia:ans[3],
+      bloq:ans[4],local:ans[5],
       contato_pref:uData.contato_pref||'whatsapp',
       perfil:prof.nome,
       ancora:proc.ancora.replace(/&nbsp;/g,' '),faixa:proc.faixa||'',
