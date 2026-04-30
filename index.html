@@ -1368,8 +1368,13 @@ function show(id){
   document.querySelectorAll('.sc').forEach(function(s){s.classList.remove('on');s.style.display='none';});
   var el=document.getElementById(id);el.style.display='block';
   requestAnimationFrame(function(){el.classList.add('on');});
-  var card=document.querySelector('.quiz-card');
-  if(card){setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'start'});window.scrollBy(0,-70);},150);}
+  setTimeout(function(){
+    var section=document.getElementById('avaliacao');
+    if(section){
+      var top=section.getBoundingClientRect().top+window.pageYOffset-60;
+      window.scrollTo({top:top,behavior:'smooth'});
+    }
+  },100);
 }
 
 function startQuiz(){
