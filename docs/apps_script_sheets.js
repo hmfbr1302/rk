@@ -22,8 +22,10 @@ function doPost(e) {
     var nome = data.nome || '';
     var primeiro = nome.split(' ')[0] || 'Nova paciente';
 
-    var waMsg = 'Oi ' + nome + '! Aqui e a equipe da Dra. Rebeca Koteski. Vi que voce fez a pre-avaliacao no site com interesse em ' + proc + '. A Dra. Rebeca adoraria te atender! Tenho horarios disponiveis essa semana - qual seria melhor para voce?';
-    var waLink = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(waMsg);
+    var telCliente = (data.tel_wa || data.tel || telRaw).replace(/\D/g, '');
+    if (telCliente.length === 11) telCliente = '55' + telCliente;
+    var waMsg = 'Oi ' + primeiro + '! Aqui e a equipe da Dra. Rebeca Koteski. Vi que voce fez a pre-avaliacao no site com interesse em ' + proc + '. A Dra. Rebeca adoraria te atender! Tenho horarios disponiveis essa semana - qual seria melhor para voce?';
+    var waLink = 'https://wa.me/' + telCliente + '?text=' + encodeURIComponent(waMsg);
 
     var HEADERS = ['Data', 'Nome', 'Telefone', 'Tel limpo', 'Procedimento', 'Procedimento chave', 'Area', 'Cidade', 'Bloqueio', 'Urgencia', 'Contato preferido', 'Score (0-100)', 'Momento de compra', 'Status', 'Observacoes', 'Link WhatsApp', 'Sensivel a preco', 'UTM Source', 'UTM Medium', 'UTM Campaign', 'Data consulta', 'Operada?', 'Data cirurgia'];
 
@@ -117,7 +119,8 @@ function doPost(e) {
 
         + '</table></td></tr></table>';
 
-      var assunto = (score >= 80 ? 'URGENTE ' : score >= 60 ? 'QUENTE ' : '') + primeiro + ' quer ' + proc + ' (Score ' + score + ')';
+      var procClean = proc.replace(/[^\x00-\x7F]/g, function(c) { return {'á':'a','à':'a','ã':'a','â':'a','é':'e','ê':'e','í':'i','ó':'o','ô':'o','õ':'o','ú':'u','ç':'c','Á':'A','À':'A','Ã':'A','Â':'A','É':'E','Ê':'E','Í':'I','Ó':'O','Ô':'O','Õ':'O','Ú':'U','Ç':'C'}[c] || c; });
+      var assunto = (score >= 80 ? 'URGENTE ' : score >= 60 ? 'QUENTE ' : '') + primeiro + ' quer ' + procClean + ' (Score ' + score + ')';
 
       MailApp.sendEmail({
         to: EMAIL_ALERTA,
