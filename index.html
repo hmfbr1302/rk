@@ -1385,86 +1385,86 @@ window.addEventListener('scroll',function(){
 /* ── QUIZ DATA V8 ENXUTO — 6 telas ────────────────────────── */
 /* ans[0]=area, ans[1]=procedimento, ans[2]=capture(skip), ans[3]=urgencia, ans[4]=bloqueio, ans[5]=localizacao */
 var QUESTIONS=[
-  {id:'area',cat:"Area de interesse",tit:"Qual regiao voce mais deseja transformar?",opts:[
-    {t:"Corpo",s:"Barriga, flancos, coxas, bracos",v:"corpo"},
-    {t:"Seios",s:"Aumento, reducao ou remodelacao",v:"seios"},
-    {t:"Rosto",s:"Palpebras, nariz, bichectomia",v:"rosto"},
-    {t:"Multiplas areas",s:"Quero transformar mais de uma regiao",v:"multi"}
+  {id:'area',cat:"Área de interesse",tit:"Qual região você mais deseja transformar?",opts:[
+    {t:"Corpo",s:"Barriga, flancos, coxas, braços",v:"corpo"},
+    {t:"Seios",s:"Aumento, redução ou remodelação",v:"seios"},
+    {t:"Rosto",s:"Pálpebras, nariz, bichectomia",v:"rosto"},
+    {t:"Múltiplas áreas",s:"Quero transformar mais de uma região",v:"multi"}
   ]},
   {id:'procedimento',cat:"Procedimento",tit:"Qual procedimento te interessa?",dynamic:true},
   {id:'capture',skip:true},
-  {id:'urgencia',cat:"Quando voce quer fazer",tit:"Em que prazo voce gostaria de realizar?",opts:[
-    {t:"Proximos 2 a 3 meses",s:"Estou pronta para esse passo agora",v:"imediato"},
+  {id:'urgencia',cat:"Quando você quer fazer",tit:"Em que prazo você gostaria de realizar?",opts:[
+    {t:"Próximos 2 a 3 meses",s:"Estou pronta para esse passo agora",v:"imediato"},
     {t:"Em 3 a 6 meses",s:"Quero me organizar com calma",v:"medio"},
-    {t:"Ainda este ano",s:"Sem urgencia, mas e uma decisao tomada",v:"esteano"},
-    {t:"Proximo ano ou depois",s:"Estou planejando com antecedencia",v:"proximoano"},
-    {t:"So pesquisando",s:"Quero entender antes de decidir",v:"pesquisando"}
+    {t:"Ainda este ano",s:"Sem urgência, mas é uma decisão tomada",v:"esteano"},
+    {t:"Próximo ano ou depois",s:"Estou planejando com antecedência",v:"proximoano"},
+    {t:"Só pesquisando",s:"Quero entender antes de decidir",v:"pesquisando"}
   ]},
-  {id:'bloq',cat:"Principal bloqueio",tit:"O que mais te impede de agendar uma avaliacao?",opts:[
+  {id:'bloq',cat:"Principal bloqueio",tit:"O que mais te impede de agendar uma avaliação?",opts:[
     {t:"Quero entender se consigo pagar",s:"Preciso saber o valor real",v:"preco"},
-    {t:"Ainda preciso de mais informacoes",s:"Quero entender melhor o procedimento",v:"info"},
-    {t:"Tenho um pouco de receio",s:"E uma decisao importante",v:"medo"},
-    {t:"Estou pronta para o proximo passo",s:"So preciso encontrar a especialista certa",v:"pronta"}
+    {t:"Ainda preciso de mais informações",s:"Quero entender melhor o procedimento",v:"info"},
+    {t:"Tenho um pouco de receio",s:"É uma decisão importante",v:"medo"},
+    {t:"Estou pronta para o próximo passo",s:"Só preciso encontrar a especialista certa",v:"pronta"}
   ]},
-  {id:'local',cat:"Localizacao",tit:"Onde voce esta?",opts:[
-    {t:"Curitiba",s:"Pre-avaliacao online ou presencial",v:"cwb"},
-    {t:"Regiao Metropolitana",s:"Araucaria, SJP, Colombo, Pinhais...",v:"metro"},
-    {t:"Outra cidade do Parana",s:"Faria a pre-avaliacao online",v:"pr"},
-    {t:"Outro estado",s:"Faria a pre-avaliacao online",v:"outro"}
+  {id:'local',cat:"Localização",tit:"Onde você está?",opts:[
+    {t:"Curitiba",s:"Pré-avaliação online ou presencial",v:"cwb"},
+    {t:"Região Metropolitana",s:"Araucária, SJP, Colombo, Pinhais...",v:"metro"},
+    {t:"Outra cidade do Paraná",s:"Faria a pré-avaliação online",v:"pr"},
+    {t:"Outro estado",s:"Faria a pré-avaliação online",v:"outro"}
   ]}
 ];
 
 var PROC_OPCOES={
   corpo:[
-    {t:"Lipoaspiracao",s:"Gordura localizada",v:"lipo"},
-    {t:"Abdominoplastia",s:"Remocao de pele + reconstrucao abdominal",v:"abdomino"},
-    {t:"Lipo + Abdomino",s:"Combinacao classica",v:"lipo_abdomino"},
-    {t:"Pos-bariatrica",s:"Apos perda de peso significativa",v:"posbariatrica"},
-    {t:"Nao sei ainda",s:"Quero a Dra. me orientar",v:"naosei"}
+    {t:"Lipoaspiração",s:"Gordura localizada",v:"lipo"},
+    {t:"Abdominoplastia",s:"Remoção de pele + reconstrução abdominal",v:"abdomino"},
+    {t:"Lipo + Abdomino",s:"Combinação clássica",v:"lipo_abdomino"},
+    {t:"Pós-bariátrica",s:"Após perda de peso significativa",v:"posbariatrica"},
+    {t:"Não sei ainda",s:"Quero a Dra. me orientar",v:"naosei"}
   ],
   seios:[
-    {t:"Protese de silicone",s:"Aumento e contorno",v:"protese"},
-    {t:"Mastopexia",s:"Levantamento sem protese",v:"mastopexia"},
-    {t:"Mastopexia + protese",s:"Levantamento com volume",v:"mastopexia_protese"},
-    {t:"Reducao",s:"Diminuicao do volume",v:"reducao"},
-    {t:"Nao sei ainda",s:"Quero a Dra. me orientar",v:"naosei"}
+    {t:"Prótese de silicone",s:"Aumento e contorno",v:"protese"},
+    {t:"Mastopexia",s:"Levantamento sem prótese",v:"mastopexia"},
+    {t:"Mastopexia + prótese",s:"Levantamento com volume",v:"mastopexia_protese"},
+    {t:"Redução",s:"Diminuição do volume",v:"reducao"},
+    {t:"Não sei ainda",s:"Quero a Dra. me orientar",v:"naosei"}
   ],
   rosto:[
-    {t:"Blefaroplastia",s:"Cirurgia das palpebras",v:"blefaro"},
+    {t:"Blefaroplastia",s:"Cirurgia das pálpebras",v:"blefaro"},
     {t:"Rinoplastia",s:"Cirurgia do nariz",v:"rino"},
     {t:"Bichectomia",s:"Refinamento das bochechas",v:"bichec"},
-    {t:"Harmonizacao facial",s:"Procedimentos nao-cirurgicos integrados",v:"harmonizacao"},
-    {t:"Nao sei ainda",s:"Quero a Dra. me orientar",v:"naosei"}
+    {t:"Harmonização facial",s:"Procedimentos não-cirúrgicos integrados",v:"harmonizacao"},
+    {t:"Não sei ainda",s:"Quero a Dra. me orientar",v:"naosei"}
   ],
   multi:[
-    {t:"Mommy makeover",s:"Mama + abdome (pos-gestacao)",v:"mommy"},
+    {t:"Mommy makeover",s:"Mama + abdome (pós-gestação)",v:"mommy"},
     {t:"Lipo + mama",s:"Contorno corporal + mama",v:"lipo_mama"},
-    {t:"Face + corpo",s:"Combinacao ampla",v:"face_corpo"},
-    {t:"Nao sei ainda",s:"Quero a Dra. me orientar",v:"naosei"}
+    {t:"Face + corpo",s:"Combinação ampla",v:"face_corpo"},
+    {t:"Não sei ainda",s:"Quero a Dra. me orientar",v:"naosei"}
   ]
 };
 
 /* CONTEXTO removido como tela isolada — qualificacao extra fica pro follow-up da Raquel */
 
 var PROCS={
-  corpo:{nome:"Lipoaspiracao / Lipo HD",desc:"Remocao precisa de gordura localizada com escultura do contorno corporal.",ancora:"R$&nbsp;38.000",faixa:"R$ 18.000 a R$ 45.000",parcela:"~R$&nbsp;750/mes",entradaMin:"R$&nbsp;18.000"},
-  seios:{nome:"Mamoplastia",desc:"Remodelacao, aumento ou levantamento dos seios com naturalidade.",ancora:"R$&nbsp;32.000",faixa:"R$ 22.000 a R$ 38.000",parcela:"~R$&nbsp;900/mes",entradaMin:"R$&nbsp;22.000"},
-  rosto:{nome:"Blefaroplastia",desc:"Cirurgia das palpebras que remove excesso de pele e bolsas, rejuvenescendo o olhar.",ancora:"R$&nbsp;22.000",faixa:"R$ 12.000 a R$ 28.000",parcela:"~R$&nbsp;600/mes",entradaMin:"R$&nbsp;12.000"},
-  multi:{nome:"Combinacao personalizada",desc:"Multiplos procedimentos planejados para o seu corpo. Resultado transformador.",ancora:"R$&nbsp;65.000",faixa:"R$ 35.000 a R$ 80.000",parcela:"~R$&nbsp;1.450/mes",entradaMin:"R$&nbsp;35.000"}
+  corpo:{nome:"Lipoaspiração / Lipo HD",desc:"Remoção precisa de gordura localizada com escultura do contorno corporal.",ancora:"R$&nbsp;38.000",faixa:"R$ 18.000 a R$ 45.000",parcela:"~R$&nbsp;750/mês",entradaMin:"R$&nbsp;18.000"},
+  seios:{nome:"Mamoplastia",desc:"Remodelação, aumento ou levantamento dos seios com naturalidade.",ancora:"R$&nbsp;32.000",faixa:"R$ 22.000 a R$ 38.000",parcela:"~R$&nbsp;900/mês",entradaMin:"R$&nbsp;22.000"},
+  rosto:{nome:"Blefaroplastia",desc:"Cirurgia das pálpebras que remove excesso de pele e bolsas, rejuvenescendo o olhar.",ancora:"R$&nbsp;22.000",faixa:"R$ 12.000 a R$ 28.000",parcela:"~R$&nbsp;600/mês",entradaMin:"R$&nbsp;12.000"},
+  multi:{nome:"Combinação personalizada",desc:"Múltiplos procedimentos planejados para o seu corpo. Resultado transformador.",ancora:"R$&nbsp;65.000",faixa:"R$ 35.000 a R$ 80.000",parcela:"~R$&nbsp;1.450/mês",entradaMin:"R$&nbsp;35.000"}
 };
 
 /* Map procedimento especifico para nome legivel */
 var PROC_NOMES={
-  lipo:"Lipoaspiracao",abdomino:"Abdominoplastia",lipo_abdomino:"Lipo + Abdominoplastia",posbariatrica:"Pos-bariatrica",
-  protese:"Protese de Silicone",mastopexia:"Mastopexia",mastopexia_protese:"Mastopexia + Protese",reducao:"Reducao Mamaria",
-  blefaro:"Blefaroplastia",rino:"Rinoplastia",bichec:"Bichectomia",harmonizacao:"Harmonizacao Facial",
+  lipo:"Lipoaspiração",abdomino:"Abdominoplastia",lipo_abdomino:"Lipo + Abdominoplastia",posbariatrica:"Pós-bariátrica",
+  protese:"Prótese de Silicone",mastopexia:"Mastopexia",mastopexia_protese:"Mastopexia + Prótese",reducao:"Redução Mamária",
+  blefaro:"Blefaroplastia",rino:"Rinoplastia",bichec:"Bichectomia",harmonizacao:"Harmonização Facial",
   mommy:"Mommy Makeover",lipo_mama:"Lipo + Mama",face_corpo:"Face + Corpo",naosei:"A definir com a Dra."
 };
 
 var PROFILES=[
-  {min:5,nome:"Candidata Ideal",desc:"Seu perfil indica que voce esta no momento certo para dar este passo. A probabilidade de resultados excepcionais e alta."},
-  {min:3,nome:"Pronta para Avaliar",desc:"Voce esta em um otimo momento. Uma conversa com a Dra. Rebeca vai transformar duvidas em certezas."},
-  {min:0,nome:"Em Exploracao",desc:"Pesquisar e o inicio de tudo. Uma avaliacao profissional vai mostrar o que e possivel para o seu caso."}
+  {min:5,nome:"Candidata Ideal",desc:"Seu perfil indica que você está no momento certo para dar este passo. A probabilidade de resultados excepcionais é alta."},
+  {min:3,nome:"Pronta para Avaliar",desc:"Você está em um ótimo momento. Uma conversa com a Dra. Rebeca vai transformar dúvidas em certezas."},
+  {min:0,nome:"Em Exploração",desc:"Pesquisar é o início de tudo. Uma avaliação profissional vai mostrar o que é possível para o seu caso."}
 ];
 
 var idx=0,ans=[],uData={nome:'',tel:'',contato_pref:'whatsapp'};
@@ -1496,7 +1496,7 @@ function startQuiz(){
   /* Recuperacao de abandono */
   var saved=loadProgress();
   if(saved && saved.uData && saved.uData.tel && saved.idx>=3){
-    if(confirm('Voce comecou esta pre-avaliacao antes. Quer continuar de onde parou?')){
+    if(confirm('Você começou esta pré-avaliação antes. Quer continuar de onde parou?')){
       ans=saved.ans;uData=saved.uData;idx=saved.idx;
       show('s-quiz');renderQ(idx);
       return;
@@ -1616,17 +1616,17 @@ document.getElementById('ftel').addEventListener('input',function(){
 
 function validTel(v){
   var d=v.replace(/\D/g,'');
-  if(d.length!==11)return{ok:false,msg:'Numero precisa ter DDD + 9 digitos.'};
+  if(d.length!==11)return{ok:false,msg:'Número precisa ter DDD + 9 dígitos.'};
   var ddd=parseInt(d.substr(0,2));
-  if(ddd<11||ddd>99)return{ok:false,msg:'DDD invalido. Confira o codigo da sua cidade.'};
-  if(d.charAt(2)!=='9')return{ok:false,msg:'Numero de celular deve comecar com 9 apos o DDD.'};
-  if(/^(\d)\1+$/.test(d))return{ok:false,msg:'Numero invalido. Digite seu numero real.'};
+  if(ddd<11||ddd>99)return{ok:false,msg:'DDD inválido. Confira o código da sua cidade.'};
+  if(d.charAt(2)!=='9')return{ok:false,msg:'Número de celular deve começar com 9 após o DDD.'};
+  if(/^(\d)\1+$/.test(d))return{ok:false,msg:'Número inválido. Digite seu número real.'};
   return{ok:true};
 }
 
 function validNome(n){
-  if(!n||n.length<3)return{ok:false,msg:'Por favor, informe seu nome (minimo 3 letras).'};
-  if(/\d/.test(n))return{ok:false,msg:'Nome nao pode conter numeros.'};
+  if(!n||n.length<3)return{ok:false,msg:'Por favor, informe seu nome (mínimo 3 letras).'};
+  if(/\d/.test(n))return{ok:false,msg:'Nome não pode conter números.'};
   if(/^(.)\1+$/i.test(n.replace(/\s/g,'')))return{ok:false,msg:'Por favor, informe seu nome real.'};
   var fakes=['teste','test','aaa','xxx','asdf','qwer','abc','zzz','nao','nada','ninguem'];
   if(fakes.indexOf(n.toLowerCase())>-1)return{ok:false,msg:'Por favor, informe seu nome real.'};
@@ -1694,14 +1694,14 @@ function clearProgress(){try{localStorage.removeItem('quiz_progress');}catch(e){
 
 function startLoad(){
   show('s-load');
-  var steps=["Calculando investimento para o seu perfil...","Montando seu diagnostico personalizado...","Quase pronto..."];
+  var steps=["Calculando investimento para o seu perfil...","Montando seu diagnóstico personalizado...","Quase pronto..."];
   var i=0;var el=document.getElementById('lstep');
   var t=setInterval(function(){i++;if(i<steps.length){el.textContent=steps[i];}else{clearInterval(t);showReinforcement();}},1100);
 }
 
 function showReinforcement(){
   var fn=uData.nome?uData.nome.split(' ')[0]:'';
-  document.getElementById('s-res').innerHTML='<div class="reinforcement"><h3>Otimo, '+fn+'!</h3><p>A Dra. Rebeca vai adorar te conhecer.<br>Seu diagnostico esta pronto...</p></div>';
+  document.getElementById('s-res').innerHTML='<div class="reinforcement"><h3>Ótimo, '+fn+'!</h3><p>A Dra. Rebeca vai adorar te conhecer.<br>Seu diagnóstico está pronto...</p></div>';
   show('s-res');
   setTimeout(function(){buildResult();},1800);
 }
@@ -1734,43 +1734,43 @@ function buildResult(){
   var mes=new Date().toLocaleString('pt-BR',{month:'long'});
   var proxMes=new Date(new Date().getFullYear(),new Date().getMonth()+1).toLocaleString('pt-BR',{month:'long'});
 
-  var msgP=encodeURIComponent('Ola! Sou '+uData.nome+' e acabei de fazer a pre-avaliacao no site. Meu diagnostico foi "'+prof.nome+'" e meu interesse e em '+procNome+'. Gostaria de agendar uma avaliacao com a Dra. Rebeca.');
-  var msgO=encodeURIComponent('Ola! Sou '+uData.nome+'. Fiz a pre-avaliacao no site e gostaria de agendar uma consulta online por R$ '+CONSULTA_ONLINE+'.');
-  var msgPreco=encodeURIComponent('Ola! Sou '+uData.nome+'. Fiz a pre-avaliacao no site e queria entender melhor as opcoes de pagamento para '+procNome+'. Pode me ajudar?');
+  var msgP=encodeURIComponent('Olá! Sou '+uData.nome+' e acabei de fazer a pré-avaliação no site. Meu diagnóstico foi "'+prof.nome+'" e meu interesse é em '+procNome+'. Gostaria de agendar uma avaliação com a Dra. Rebeca.');
+  var msgO=encodeURIComponent('Olá! Sou '+uData.nome+'. Fiz a pré-avaliação no site e gostaria de agendar uma consulta online por R$ '+CONSULTA_ONLINE+'.');
+  var msgPreco=encodeURIComponent('Olá! Sou '+uData.nome+'. Fiz a pré-avaliação no site e queria entender melhor as opções de pagamento para '+procNome+'. Pode me ajudar?');
 
   var blocoPreco=isSensivel?
     '<div class="ancora" style="background:linear-gradient(135deg,#1A3A1A,#2D4A2D)">'+
-      '<div class="anc-lbl">Opcoes de investimento para o seu caso</div>'+
+      '<div class="anc-lbl">Opções de investimento para o seu caso</div>'+
       '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">'+
         '<div style="background:rgba(255,255,255,.07);border-radius:9px;padding:.9rem;text-align:center">'+
           '<div style="font-size:12px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;font-family:DM Sans,sans-serif">A vista</div>'+
           '<div style="font-family:Cormorant Garamond,serif;font-size:22px;color:#fff;font-weight:300">'+proc.entradaMin+'</div>'+
-          '<div style="font-size:12px;color:rgba(255,255,255,.35);margin-top:3px;font-family:DM Sans,sans-serif">valor inicial de referencia</div>'+
+          '<div style="font-size:12px;color:rgba(255,255,255,.35);margin-top:3px;font-family:DM Sans,sans-serif">valor inicial de referência</div>'+
         '</div>'+
         '<div style="background:rgba(255,255,255,.12);border-radius:9px;padding:.9rem;text-align:center;border:1px solid rgba(255,255,255,.18)">'+
           '<div style="font-size:12px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;font-family:DM Sans,sans-serif">Parcelado</div>'+
           '<div style="font-family:Cormorant Garamond,serif;font-size:22px;color:#fff;font-weight:300">'+proc.parcela+'</div>'+
-          '<div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:3px;font-family:DM Sans,sans-serif">estimativa no cartao</div>'+
+          '<div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:3px;font-family:DM Sans,sans-serif">estimativa no cartão</div>'+
         '</div>'+
       '</div>'+
-      '<div style="font-size:12px;color:rgba(255,255,255,.25);text-align:center;margin-top:10px;font-family:DM Sans,sans-serif">Valor exato e condicoes definidos na avaliacao</div>'+
+      '<div style="font-size:12px;color:rgba(255,255,255,.25);text-align:center;margin-top:10px;font-family:DM Sans,sans-serif">Valor exato e condições definidos na avaliação</div>'+
     '</div>' :
     '<div class="ancora">'+
       '<div class="anc-lbl">Investimento estimado</div>'+
       '<div class="anc-val">'+proc.ancora+'</div>'+
-      '<div class="anc-range">Faixa de referencia: '+proc.faixa+'</div>'+
-      '<div class="anc-note">Valor exato definido apos avaliacao clinica personalizada</div>'+
+      '<div class="anc-range">Faixa de referência: '+proc.faixa+'</div>'+
+      '<div class="anc-note">Valor exato definido após avaliação clínica personalizada</div>'+
     '</div>';
 
   /* CTA personalizado por score */
   var ctaP;
   if(score>=85){
-    ctaP='<div class="cta-urgent"><div class="cta-eyebrow">A Dra. Rebeca tem horarios abertos esta semana</div>'+
-      '<a href="https://wa.me/'+WA+'?text='+msgP+'" target="_blank" rel="noopener" class="btn btn-p" onclick="trackWA(\'presencial\')">Ver horarios disponiveis &rarr;</a></div>';
+    ctaP='<div class="cta-urgent"><div class="cta-eyebrow">A Dra. Rebeca tem horários abertos esta semana</div>'+
+      '<a href="https://wa.me/'+WA+'?text='+msgP+'" target="_blank" rel="noopener" class="btn btn-p" onclick="trackWA(\'presencial\')">Ver horários disponíveis &rarr;</a></div>';
   }else if(score>=65){
     ctaP=isSensivel?
-      '<a href="https://wa.me/'+WA+'?text='+msgPreco+'" target="_blank" rel="noopener" class="btn btn-p" onclick="trackWA(\'preco\')">Entender as opcoes de pagamento &rarr;</a>':
-      '<a href="https://wa.me/'+WA+'?text='+msgP+'" target="_blank" rel="noopener" class="btn btn-p" onclick="trackWA(\'presencial\')">'+(isLocal?'Agendar avaliacao presencial em Curitiba &rarr;':'Agendar minha avaliacao &rarr;')+'</a>';
+      '<a href="https://wa.me/'+WA+'?text='+msgPreco+'" target="_blank" rel="noopener" class="btn btn-p" onclick="trackWA(\'preco\')">Entender as opções de pagamento &rarr;</a>':
+      '<a href="https://wa.me/'+WA+'?text='+msgP+'" target="_blank" rel="noopener" class="btn btn-p" onclick="trackWA(\'presencial\')">'+(isLocal?'Agendar avaliação presencial em Curitiba &rarr;':'Agendar minha avaliação &rarr;')+'</a>';
   }else if(score>=40){
     ctaP='<a href="https://wa.me/'+WA+'?text='+msgP+'" target="_blank" rel="noopener" class="btn btn-p btn-soft" onclick="trackWA(\'presencial\')">Conversar sem compromisso &rarr;</a>';
   }else{
@@ -1799,7 +1799,7 @@ function buildResult(){
 
   document.getElementById('s-res').innerHTML=
     '<div class="res-hero">'+
-      '<div class="rh-tag">Diagnostico para</div>'+
+      '<div class="rh-tag">Diagnóstico para</div>'+
       '<div class="rh-name">'+fn+'</div>'+
       '<div class="rh-prof">'+prof.nome+'</div>'+
       '<div class="rh-desc">'+prof.desc+'</div>'+
@@ -1812,26 +1812,26 @@ function buildResult(){
     blocoPreco+
     '<div class="consult">'+
       '<div class="ct-hd"><div class="ct-gem">&#10022;</div>'+
-      '<div><div class="ct-title">Avaliacao Cirurgica com a Dra. Rebeca</div>'+
+      '<div><div class="ct-title">Avaliação Cirúrgica com a Dra. Rebeca</div>'+
       '<div class="ct-sub">60 minutos · Curitiba ou Online</div></div></div>'+
       '<ul class="ct-list">'+
-        '<li>Exame clinico completo e analise do seu caso</li>'+
-        '<li>Tecnica cirurgica mais adequada ao seu corpo</li>'+
-        '<li>Planejamento com etapas, cronograma e recuperacao</li>'+
+        '<li>Exame clínico completo e análise do seu caso</li>'+
+        '<li>Técnica cirúrgica mais adequada ao seu corpo</li>'+
+        '<li>Planejamento com etapas, cronograma e recuperação</li>'+
         '<li>Estimativa de investimento real e personalizada</li>'+
-        (isSensivel?'<li>Todas as opcoes de parcelamento disponiveis</li>':'<li>Resposta a todas as suas duvidas</li>')+
-        '<li>Relatorio escrito com plano completo para levar</li>'+
+        (isSensivel?'<li>Todas as opções de parcelamento disponíveis</li>':'<li>Resposta a todas as suas dúvidas</li>')+
+        '<li>Relatório escrito com plano completo para levar</li>'+
       '</ul>'+
       '<div class="ct-price">'+
         '<div class="ct-pval">R$&nbsp;'+CONSULTA_ONLINE+' <span style="font-size:14px;font-weight:300;color:#9A8080;font-family:DM Sans,sans-serif">· consulta online</span></div>'+
         '<div class="ct-pnote">ou presencial em Curitiba · CRM PR 40326</div>'+
       '</div>'+
     '</div>'+
-    '<div class="urgency"><div class="urg-dot"></div><div class="urg-txt">Agenda de '+mes+' e '+proxMes+' com vagas limitadas. A Dra. Rebeca limita o numero de pre-avaliacoes mensais.</div></div>'+
+    '<div class="urgency"><div class="urg-dot"></div><div class="urg-txt">Agenda de '+mes+' e '+proxMes+' com vagas limitadas. A Dra. Rebeca limita o número de pré-avaliações mensais.</div></div>'+
     '<div class="cta-stack">'+ctaP+
       '<a href="https://wa.me/'+WA+'?text='+msgO+'" target="_blank" rel="noopener" class="btn btn-s" onclick="trackWA(\'online\')">Consulta online · R$&nbsp;'+CONSULTA_ONLINE+'</a>'+
     '</div>'+
-    '<p class="disc">Dra. Rebeca Koteski · CRM PR 40326 · RQE 34726 · @rkoteski.cirurgiaplastica<br>Estimativas baseadas em tabelas de referencia de mercado. Investimento real definido em avaliacao clinica.</p>';
+    '<p class="disc">Dra. Rebeca Koteski · CRM PR 40326 · RQE 34726 · @rkoteski.cirurgiaplastica<br>Estimativas baseadas em tabelas de referência de mercado. Investimento real definido em avaliação clínica.</p>';
 
   show('s-res');
   clearProgress();
