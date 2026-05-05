@@ -686,7 +686,7 @@ footer{background:var(--v3);padding:3rem 0 2rem}
         <span class="hero-tag-text">Cirurgia Plástica em Curitiba</span>
       </div>
       <h1 class="hero-title" id="hero-title">O corpo que você<br>sempre <em>imaginou</em><br>começa aqui</h1>
-      <p class="hero-sub">Cirurgiã plástica com mais de 208 procedimentos realizados. Cada cirurgia planejada com cuidado, técnica e respeito à sua identidade.</p>
+      <p class="hero-sub">Cirurgiã plástica com mais de <span id="hero-proc">208</span> procedimentos realizados. Cada cirurgia planejada com cuidado, técnica e respeito à sua identidade.</p>
       <div class="hero-actions">
         <a href="#avaliacao" class="btn-hero-primary">
           Fazer pré-avaliação gratuita
@@ -1260,10 +1260,11 @@ var UTM = (function(){
   var el2 = document.getElementById('sobre-proc');
   if(el2) el2.textContent = total;
 
-  // Atualizar também o texto da seção Sobre se existir
-  document.querySelectorAll('.sobre-body').forEach(function(p){
-    p.innerHTML = p.innerHTML.replace(/\b208\b/g, total);
-  });
+  var el3 = document.getElementById('hero-proc');
+  if(el3) el3.textContent = total;
+
+  // Expor total globalmente para o counter animation
+  window.PROC_TOTAL = total;
 
   // Atualizar valor da consulta online no FAQ
   var faqVal = document.getElementById('faq-consulta-val');
@@ -1346,7 +1347,7 @@ window.addEventListener('scroll',function(){
 (function(){
   var anosAnimTarget=new Date().getFullYear()-2017;
   var STATS=[
-    {el:null,target:208,suffix:'',decimal:false,prefix:'+'},
+    {el:null,target:window.PROC_TOTAL||208,suffix:'',decimal:false,prefix:'+'},
     {el:null,target:anosAnimTarget,suffix:' anos',decimal:false,prefix:''},
     {el:null,target:98,suffix:'%',decimal:false,prefix:''},
     {el:null,target:2,suffix:'M',decimal:false,prefix:'+'}
