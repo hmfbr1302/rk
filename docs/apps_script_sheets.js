@@ -119,7 +119,8 @@ function doPost(e) {
 
         + '</table></td></tr></table>';
 
-      var procClean = proc.replace(/[^\x00-\x7F]/g, function(c) { return {'á':'a','à':'a','ã':'a','â':'a','é':'e','ê':'e','í':'i','ó':'o','ô':'o','õ':'o','ú':'u','ç':'c','Á':'A','À':'A','Ã':'A','Â':'A','É':'E','Ê':'E','Í':'I','Ó':'O','Ô':'O','Õ':'O','Ú':'U','Ç':'C'}[c] || c; });
+      var MAP_PROC_CLEAN = {'Lipoaspiração':'Lipoaspiracao','Lipoaspiracao':'Lipoaspiracao','Mamoplastia':'Mamoplastia','Blefaroplastia':'Blefaroplastia','Abdominoplastia':'Abdominoplastia'};
+      var procClean = MAP_PROC_CLEAN[proc] || proc.replace(/[^\x20-\x7E]/g, '');
       var assunto = (score >= 80 ? 'URGENTE ' : score >= 60 ? 'QUENTE ' : '') + primeiro + ' quer ' + procClean + ' (Score ' + score + ')';
 
       MailApp.sendEmail({
