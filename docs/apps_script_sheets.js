@@ -119,8 +119,8 @@ function doPost(e) {
 
         + '</table></td></tr></table>';
 
-      var MAP_PROC_CLEAN = {'Lipoaspiração':'Lipoaspiracao','Lipoaspiracao':'Lipoaspiracao','Mamoplastia':'Mamoplastia','Blefaroplastia':'Blefaroplastia','Abdominoplastia':'Abdominoplastia'};
-      var procClean = MAP_PROC_CLEAN[proc] || proc.replace(/[^\x20-\x7E]/g, '');
+      var MAP_KEY_CLEAN = {lipo:'Lipoaspiracao',mama:'Mamoplastia',blefaro:'Blefaroplastia',abdomino:'Abdominoplastia'};
+      var procClean = MAP_KEY_CLEAN[procKey] || 'Cirurgia Plastica';
       var assunto = (score >= 80 ? 'URGENTE ' : score >= 60 ? 'QUENTE ' : '') + primeiro + ' quer ' + procClean + ' (Score ' + score + ')';
 
       MailApp.sendEmail({
